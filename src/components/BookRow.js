@@ -1,8 +1,6 @@
-export const BookRow = ({data}) => (
+export const BookRow = ({title, author}) => (
 	<tr>
-		<td>{data[0]}</td>
-		<td>{data[1]}</td>
-		<td>{data[2]}</td>
-		<td>{data[3]}</td>
+		<td>{title}</td>
+		<td>{author}</td>
 	</tr>
 )

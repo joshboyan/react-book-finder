@@ -1,13 +1,12 @@
 import { Component } from 'react'
 import { DashBoard } from './DashBoard'
 import { BookList } from './BookList'
-import { BookRow } from './BookRow'
 
 export class App extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			items:['hi', 'pal','howya', 'doin']
+			items:[]
 		}
 	}	
 
@@ -15,21 +14,18 @@ export class App extends Component {
 		this.serverRequest = fetch("https://www.googleapis.com/books/v1/volumes?q=the+hobbit")
 			.then(response => response.json())
 			.then((data) => {this.setState(data);
+				console.log(data);
 		})
 	}
-	/*componentDidMount() {
-  	this.serverRequest = $.get("https://www.googleapis.com/books/v1/volumes?q=the+hobbit", function(result) {
-  		var tempApts = result;
-  		this.setState({
-  			items: tempApts
-  		});//setState
-  	}.bind(this))
-  }*/
+
+	componentWillUnmount() {
+		this.serverRequest.abort();
+	}
 
  	render() {
 		return(
 			<div className="app">
-				<BookList data={this.state.items}/>
+				<BookList data={this.state.items} />
 			</div>
 		)
 	}
