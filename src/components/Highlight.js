@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export const Highlight = ({data}) => (
 	<div>
 		<h2>{data.title}</h2>
@@ -10,3 +12,7 @@ export const Highlight = ({data}) => (
 		<div><a href="">Purchase</a></div>
 	</div>
 )
+
+Highlight.propTypes = {
+	data: PropTypes.object
+}

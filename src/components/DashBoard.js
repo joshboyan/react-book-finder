@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 export const DashBoard = ({type, query}) => {
 	
 	let _type, _query;
@@ -26,4 +27,9 @@ export const DashBoard = ({type, query}) => {
 DashBoard.defaultProps = {
 	type: "q=intitle",
 	query: "hobbit"
+}
+
+DashBoard.propTypes = {
+	type: PropTypes.string,
+	query: PropTypes.string
 }

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { BookRow } from './BookRow';
 
 export const BookList = ({data}) => (
@@ -18,3 +19,7 @@ export const BookList = ({data}) => (
 		</tbody>
 	</table>
 )
+
+BookList.propTypes = {
+	data: PropTypes.array
+}

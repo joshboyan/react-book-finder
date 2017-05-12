@@ -32,7 +32,7 @@ export class App extends Component {
 					} else {
 						element.title = null;
 					}
-					if ( typeof item.volumeInfo.authors[0] != 'undefined') {
+					if ( typeof item.volumeInfo.authors != 'undefined') {
 						element.authors =  item.volumeInfo.authors[0];
 					} else {
 						element.authors = null;
@@ -62,7 +62,7 @@ export class App extends Component {
 				})				
 		}).catch((err) => {
 				console.error('There was an error fetching data', err);
-			})
+			});
 	}
 
 	componentWillUnmount() {
