@@ -1,0 +1,713 @@
+{
+ "kind": "books#volumes",
+ "totalItems": 1224,
+ "items": [
+  {
+   "kind": "books#volume",
+   "id": "hFfhrCWiLSMC",
+   "etag": "SDPE/VytoJI",
+   "selfLink": "https://www.googleapis.com/books/v1/volumes/hFfhrCWiLSMC",
+   "volumeInfo": {
+    "title": "The Hobbit, Or, There and Back Again",
+    "authors": [
+     "John Ronald Reuel Tolkien"
+    ],
+    "publisher": "Del Rey Books",
+    "publishedDate": "1982",
+    "description": "Chronicles the adventures of the inhabitants of Middle-earth and Bilbo Baggins, the hobbit who brought home to The Shire the One Ring of Power",
+    "industryIdentifiers": [
+     {
+      "type": "ISBN_13",
+      "identifier": "9780345339683"
+     },
+     {
+      "type": "ISBN_10",
+      "identifier": "0345339681"
+     }
+    ],
+    "readingModes": {
+     "text": false,
+     "image": false
+    },
+    "pageCount": 304,
+    "printType": "BOOK",
+    "categories": [
+     "Fiction"
+    ],
+    "averageRating": 4.0,
+    "ratingsCount": 2736,
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": false,
+    "contentVersion": "0.1.1.0.preview.0",
+    "imageLinks": {
+     "smallThumbnail": "http://books.google.com/books/content?id=hFfhrCWiLSMC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+     "thumbnail": "http://books.google.com/books/content?id=hFfhrCWiLSMC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    },
+    "language": "en",
+    "previewLink": "http://books.google.com/books?id=hFfhrCWiLSMC&printsec=frontcover&dq=the+hobbit&hl=&cd=1&source=gbs_api",
+    "infoLink": "http://books.google.com/books?id=hFfhrCWiLSMC&dq=the+hobbit&hl=&source=gbs_api",
+    "canonicalVolumeLink": "https://books.google.com/books/about/The_Hobbit_Or_There_and_Back_Again.html?hl=&id=hFfhrCWiLSMC"
+   },
+   "saleInfo": {
+    "country": "US",
+    "saleability": "NOT_FOR_SALE",
+    "isEbook": false
+   },
+   "accessInfo": {
+    "country": "US",
+    "viewability": "PARTIAL",
+    "embeddable": true,
+    "publicDomain": false,
+    "textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+    "epub": {
+     "isAvailable": false
+    },
+    "pdf": {
+     "isAvailable": false
+    },
+    "webReaderLink": "http://play.google.com/books/reader?id=hFfhrCWiLSMC&hl=&printsec=frontcover&output=reader&source=gbs_api",
+    "accessViewStatus": "SAMPLE",
+    "quoteSharingAllowed": false
+   },
+   "searchInfo": {
+    "textSnippet": "Chronicles the adventures of the inhabitants of Middle-earth and Bilbo Baggins, the hobbit who brought home to The Shire the One Ring of Power"
+   }
+  },
+  {
+   "kind": "books#volume",
+   "id": "4LEjf7GgIGIC",
+   "etag": "wGVM8d7/J7s",
+   "selfLink": "https://www.googleapis.com/books/v1/volumes/4LEjf7GgIGIC",
+   "volumeInfo": {
+    "title": "THE HOBBIT",
+    "authors": [
+     "J. R. R. TOLKIEN"
+    ],
+    "publishedDate": "1966",
+    "readingModes": {
+     "text": false,
+     "image": false
+    },
+    "printType": "BOOK",
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": false,
+    "contentVersion": "preview-1.0.0",
+    "imageLinks": {
+     "smallThumbnail": "http://books.google.com/books/content?id=4LEjf7GgIGIC&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+     "thumbnail": "http://books.google.com/books/content?id=4LEjf7GgIGIC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+    },
+    "language": "en",
+    "previewLink": "http://books.google.com/books?id=4LEjf7GgIGIC&q=the+hobbit&dq=the+hobbit&hl=&cd=2&source=gbs_api",
+    "infoLink": "http://books.google.com/books?id=4LEjf7GgIGIC&dq=the+hobbit&hl=&source=gbs_api",
+    "canonicalVolumeLink": "https://books.google.com/books/about/THE_HOBBIT.html?hl=&id=4LEjf7GgIGIC"
+   },
+   "saleInfo": {
+    "country": "US",
+    "saleability": "NOT_FOR_SALE",
+    "isEbook": false
+   },
+   "accessInfo": {
+    "country": "US",
+    "viewability": "NO_PAGES",
+    "embeddable": false,
+    "publicDomain": false,
+    "textToSpeechPermission": "ALLOWED",
+    "epub": {
+     "isAvailable": false
+    },
+    "pdf": {
+     "isAvailable": false
+    },
+    "webReaderLink": "http://play.google.com/books/reader?id=4LEjf7GgIGIC&hl=&printsec=frontcover&output=reader&source=gbs_api",
+    "accessViewStatus": "NONE",
+    "quoteSharingAllowed": false
+   }
+  },
+  {
+   "kind": "books#volume",
+   "id": "zEK0ewyRMn4C",
+   "etag": "2vvBTtx4Q+w",
+   "selfLink": "https://www.googleapis.com/books/v1/volumes/zEK0ewyRMn4C",
+   "volumeInfo": {
+    "title": "The Hobbit",
+    "subtitle": "75th Anniversary Edition",
+    "authors": [
+     "J.R.R. Tolkien"
+    ],
+    "publisher": "Houghton Mifflin Harcourt",
+    "publishedDate": "2012-02-15",
+    "description": "This deluxe hardcover edition of J.R.R. Tolkien's classic prelude to his Lord of the Rings trilogy contains a short introduction by Christopher Tolkien, a reset text incorporating the most up-to-date corrections, and all of Tolkien’s own drawings and full-color illustrations, including the rare “Mirkwood” piece. J.R.R. Tolkien's own description for the original edition: \"If you care for journeys there and back, out of the comfortable Western world, over the edge of the Wild, and home again, and can take an interest in a humble hero (blessed with a little wisdom and a little courage and considerable good luck), here is a record of such a journey and such a traveler. The period is the ancient time between the age of Faerie and the dominion of men, when the famous forest of Mirkwood was still standing, and the mountains were full of danger. In following the path of this humble adventurer, you will learn by the way (as he did) -- if you do not already know all about these things -- much about trolls, goblins, dwarves, and elves, and get some glimpses into the history and politics of a neglected but important period. For Mr. Bilbo Baggins visited various notable persons; conversed with the dragon, Smaug the Magnificent; and was present, rather unwillingly, at the Battle of the Five Armies. This is all the more remarkable, since he was a hobbit. Hobbits have hitherto been passed over in history and legend, perhaps because they as a rule preferred comfort to excitement. But this account, based on his personal memoirs, of the one exciting year in the otherwise quiet life of Mr. Baggins will give you a fair idea of the estimable people now (it is said) becoming rather rare. They do not like noise.\"",
+    "industryIdentifiers": [
+     {
+      "type": "ISBN_13",
+      "identifier": "9780547951966"
+     },
+     {
+      "type": "ISBN_10",
+      "identifier": "0547951965"
+     }
+    ],
+    "readingModes": {
+     "text": true,
+     "image": true
+    },
+    "pageCount": 320,
+    "printType": "BOOK",
+    "categories": [
+     "Fiction"
+    ],
+    "averageRating": 4.5,
+    "ratingsCount": 31,
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": true,
+    "contentVersion": "4.8.8.0.preview.3",
+    "imageLinks": {
+     "smallThumbnail": "http://books.google.com/books/content?id=zEK0ewyRMn4C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+     "thumbnail": "http://books.google.com/books/content?id=zEK0ewyRMn4C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    },
+    "language": "en",
+    "previewLink": "http://books.google.com/books?id=zEK0ewyRMn4C&printsec=frontcover&dq=the+hobbit&hl=&cd=3&source=gbs_api",
+    "infoLink": "https://play.google.com/store/books/details?id=zEK0ewyRMn4C&source=gbs_api",
+    "canonicalVolumeLink": "https://market.android.com/details?id=book-zEK0ewyRMn4C"
+   },
+   "saleInfo": {
+    "country": "US",
+    "saleability": "FOR_SALE",
+    "isEbook": true,
+    "listPrice": {
+     "amount": 9.99,
+     "currencyCode": "USD"
+    },
+    "retailPrice": {
+     "amount": 9.99,
+     "currencyCode": "USD"
+    },
+    "buyLink": "https://play.google.com/store/books/details?id=zEK0ewyRMn4C&rdid=book-zEK0ewyRMn4C&rdot=1&source=gbs_api",
+    "offers": [
+     {
+      "finskyOfferType": 1,
+      "listPrice": {
+       "amountInMicros": 9990000.0,
+       "currencyCode": "USD"
+      },
+      "retailPrice": {
+       "amountInMicros": 9990000.0,
+       "currencyCode": "USD"
+      },
+      "giftable": true
+     }
+    ]
+   },
+   "accessInfo": {
+    "country": "US",
+    "viewability": "PARTIAL",
+    "embeddable": true,
+    "publicDomain": false,
+    "textToSpeechPermission": "ALLOWED",
+    "epub": {
+     "isAvailable": true,
+     "acsTokenLink": "http://books.google.com/books/download/The_Hobbit-sample-epub.acsm?id=zEK0ewyRMn4C&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+    },
+    "pdf": {
+     "isAvailable": true,
+     "acsTokenLink": "http://books.google.com/books/download/The_Hobbit-sample-pdf.acsm?id=zEK0ewyRMn4C&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+    },
+    "webReaderLink": "http://play.google.com/books/reader?id=zEK0ewyRMn4C&hl=&printsec=frontcover&output=reader&source=gbs_api",
+    "accessViewStatus": "SAMPLE",
+    "quoteSharingAllowed": false
+   },
+   "searchInfo": {
+    "textSnippet": "This deluxe hardcover edition of J.R.R. Tolkien&#39;s classic prelude to his Lord of the Rings trilogy contains a short introduction by Christopher Tolkien, a reset text incorporating the most up-to-date corrections, and all of Tolkien’s own ..."
+   }
+  },
+  {
+   "kind": "books#volume",
+   "id": "j2uGDAAAQBAJ",
+   "etag": "VsyqhZTXN2g",
+   "selfLink": "https://www.googleapis.com/books/v1/volumes/j2uGDAAAQBAJ",
+   "volumeInfo": {
+    "title": "The Hobbit",
+    "authors": [
+     "J. R. R. Tolkien"
+    ],
+    "publishedDate": "2016-06-25",
+    "description": "Read the definitive edition of Bilbo Baggins’ adventures in middle-earth in this classic bestseller behind this year’s biggest movie. The Hobbit is a tale of high adventure, undertaken by a company of dwarves in search of dragon-guarded gold. A reluctant partner in this perilous quest is Bilbo Baggins, a comfort-loving unambitious hobbit, who surprises even himself by his resourcefulness and skill as a burglar. Encounters with trolls, goblins, dwarves, elves and giant spiders, conversations with the dragon, Smaug, and a rather unwilling presence at the Battle of Five Armies are just some of the adventures that befall Bilbo. Bilbo Baggins has taken his place among the ranks of the immortals of children’s fiction. Written by Professor Tolkien for his own children, The Hobbit met with instant critical acclaim when published.",
+    "industryIdentifiers": [
+     {
+      "type": "ISBN_13",
+      "identifier": "9786050465112"
+     },
+     {
+      "type": "ISBN_10",
+      "identifier": "6050465118"
+     }
+    ],
+    "readingModes": {
+     "text": true,
+     "image": false
+    },
+    "printType": "BOOK",
+    "categories": [
+     "Fiction"
+    ],
+    "averageRating": 5.0,
+    "ratingsCount": 11,
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": false,
+    "contentVersion": "1.3.2.0.preview.2",
+    "panelizationSummary": {
+     "containsEpubBubbles": false,
+     "containsImageBubbles": false
+    },
+    "imageLinks": {
+     "smallThumbnail": "http://books.google.com/books/content?id=j2uGDAAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+     "thumbnail": "http://books.google.com/books/content?id=j2uGDAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+    },
+    "language": "en",
+    "previewLink": "http://books.google.com/books?id=j2uGDAAAQBAJ&dq=the+hobbit&hl=&cd=4&source=gbs_api",
+    "infoLink": "http://books.google.com/books?id=j2uGDAAAQBAJ&dq=the+hobbit&hl=&source=gbs_api",
+    "canonicalVolumeLink": "https://books.google.com/books/about/The_Hobbit.html?hl=&id=j2uGDAAAQBAJ"
+   },
+   "saleInfo": {
+    "country": "US",
+    "saleability": "NOT_FOR_SALE",
+    "isEbook": false
+   },
+   "accessInfo": {
+    "country": "US",
+    "viewability": "NO_PAGES",
+    "embeddable": false,
+    "publicDomain": false,
+    "textToSpeechPermission": "ALLOWED",
+    "epub": {
+     "isAvailable": true
+    },
+    "pdf": {
+     "isAvailable": true
+    },
+    "webReaderLink": "http://play.google.com/books/reader?id=j2uGDAAAQBAJ&hl=&printsec=frontcover&output=reader&source=gbs_api",
+    "accessViewStatus": "NONE",
+    "quoteSharingAllowed": false
+   },
+   "searchInfo": {
+    "textSnippet": "Read the definitive edition of Bilbo Baggins’ adventures in middle-earth in this classic bestseller behind this year’s biggest movie."
+   }
+  },
+  {
+   "kind": "books#volume",
+   "id": "Wy0svf_7NzsC",
+   "etag": "r6m+giRfZLk",
+   "selfLink": "https://www.googleapis.com/books/v1/volumes/Wy0svf_7NzsC",
+   "volumeInfo": {
+    "title": "The Hobbit",
+    "subtitle": "An Unexpected Journey : the Movie Storybook",
+    "authors": [
+     "Paddy Kempshall"
+    ],
+    "publisher": "Houghton Mifflin Harcourt",
+    "publishedDate": "2012",
+    "description": "Bilbo Baggins and his company of dwarves battle against evil orcs and wargs in order to recapture the lost Kingdom of Erebor.",
+    "industryIdentifiers": [
+     {
+      "type": "ISBN_13",
+      "identifier": "9780547898728"
+     },
+     {
+      "type": "ISBN_10",
+      "identifier": "054789872X"
+     }
+    ],
+    "readingModes": {
+     "text": false,
+     "image": true
+    },
+    "pageCount": 44,
+    "printType": "BOOK",
+    "categories": [
+     "Juvenile Fiction"
+    ],
+    "averageRating": 5.0,
+    "ratingsCount": 1,
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": false,
+    "contentVersion": "0.1.0.0.preview.1",
+    "imageLinks": {
+     "smallThumbnail": "http://books.google.com/books/content?id=Wy0svf_7NzsC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+     "thumbnail": "http://books.google.com/books/content?id=Wy0svf_7NzsC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    },
+    "language": "en",
+    "previewLink": "http://books.google.com/books?id=Wy0svf_7NzsC&printsec=frontcover&dq=the+hobbit&hl=&cd=5&source=gbs_api",
+    "infoLink": "http://books.google.com/books?id=Wy0svf_7NzsC&dq=the+hobbit&hl=&source=gbs_api",
+    "canonicalVolumeLink": "https://books.google.com/books/about/The_Hobbit.html?hl=&id=Wy0svf_7NzsC"
+   },
+   "saleInfo": {
+    "country": "US",
+    "saleability": "NOT_FOR_SALE",
+    "isEbook": false
+   },
+   "accessInfo": {
+    "country": "US",
+    "viewability": "PARTIAL",
+    "embeddable": true,
+    "publicDomain": false,
+    "textToSpeechPermission": "ALLOWED",
+    "epub": {
+     "isAvailable": false
+    },
+    "pdf": {
+     "isAvailable": false
+    },
+    "webReaderLink": "http://play.google.com/books/reader?id=Wy0svf_7NzsC&hl=&printsec=frontcover&output=reader&source=gbs_api",
+    "accessViewStatus": "SAMPLE",
+    "quoteSharingAllowed": false
+   },
+   "searchInfo": {
+    "textSnippet": "Bilbo Baggins and his company of dwarves battle against evil orcs and wargs in order to recapture the lost Kingdom of Erebor."
+   }
+  },
+  {
+   "kind": "books#volume",
+   "id": "H8ON-dTgQQYC",
+   "etag": "t82+o3brimk",
+   "selfLink": "https://www.googleapis.com/books/v1/volumes/H8ON-dTgQQYC",
+   "volumeInfo": {
+    "title": "The Hobbit",
+    "subtitle": "An Unexpected Journey : Visual Companion",
+    "authors": [
+     "Jude Fisher"
+    ],
+    "publisher": "Houghton Mifflin Harcourt",
+    "publishedDate": "2012",
+    "description": "A visual companion to the film \"The Hobbit: An Unexpected Journey\" offers insights into the world of Middle-Earth and includes character profiles, bestiaries, and notes on the places of Middle-Earth.",
+    "industryIdentifiers": [
+     {
+      "type": "ISBN_13",
+      "identifier": "9780547898568"
+     },
+     {
+      "type": "ISBN_10",
+      "identifier": "0547898568"
+     }
+    ],
+    "readingModes": {
+     "text": false,
+     "image": true
+    },
+    "pageCount": 75,
+    "printType": "BOOK",
+    "categories": [
+     "Art"
+    ],
+    "averageRating": 4.0,
+    "ratingsCount": 4,
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": false,
+    "contentVersion": "0.1.0.0.preview.1",
+    "imageLinks": {
+     "smallThumbnail": "http://books.google.com/books/content?id=H8ON-dTgQQYC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+     "thumbnail": "http://books.google.com/books/content?id=H8ON-dTgQQYC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    },
+    "language": "en",
+    "previewLink": "http://books.google.com/books?id=H8ON-dTgQQYC&printsec=frontcover&dq=the+hobbit&hl=&cd=6&source=gbs_api",
+    "infoLink": "http://books.google.com/books?id=H8ON-dTgQQYC&dq=the+hobbit&hl=&source=gbs_api",
+    "canonicalVolumeLink": "https://books.google.com/books/about/The_Hobbit.html?hl=&id=H8ON-dTgQQYC"
+   },
+   "saleInfo": {
+    "country": "US",
+    "saleability": "NOT_FOR_SALE",
+    "isEbook": false
+   },
+   "accessInfo": {
+    "country": "US",
+    "viewability": "PARTIAL",
+    "embeddable": true,
+    "publicDomain": false,
+    "textToSpeechPermission": "ALLOWED",
+    "epub": {
+     "isAvailable": false
+    },
+    "pdf": {
+     "isAvailable": false
+    },
+    "webReaderLink": "http://play.google.com/books/reader?id=H8ON-dTgQQYC&hl=&printsec=frontcover&output=reader&source=gbs_api",
+    "accessViewStatus": "SAMPLE",
+    "quoteSharingAllowed": false
+   },
+   "searchInfo": {
+    "textSnippet": "A visual companion to the film &quot;The Hobbit: An Unexpected Journey&quot; offers insights into the world of Middle-Earth and includes character profiles, bestiaries, and notes on the places of Middle-Earth."
+   }
+  },
+  {
+   "kind": "books#volume",
+   "id": "hiEVPwAACAAJ",
+   "etag": "jnHpPInn9vY",
+   "selfLink": "https://www.googleapis.com/books/v1/volumes/hiEVPwAACAAJ",
+   "volumeInfo": {
+    "title": "The Hobbit, Or, There and Back Again",
+    "authors": [
+     "John Ronald Reuel Tolkien",
+     "Chuck Dixon"
+    ],
+    "publishedDate": "1990",
+    "industryIdentifiers": [
+     {
+      "type": "ISBN_10",
+      "identifier": "1560600683"
+     },
+     {
+      "type": "ISBN_13",
+      "identifier": "9781560600688"
+     }
+    ],
+    "readingModes": {
+     "text": false,
+     "image": false
+    },
+    "pageCount": 137,
+    "printType": "BOOK",
+    "categories": [
+     "Fantasy"
+    ],
+    "averageRating": 4.0,
+    "ratingsCount": 2626,
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": false,
+    "contentVersion": "preview-1.0.0",
+    "language": "en",
+    "previewLink": "http://books.google.com/books?id=hiEVPwAACAAJ&dq=the+hobbit&hl=&cd=7&source=gbs_api",
+    "infoLink": "http://books.google.com/books?id=hiEVPwAACAAJ&dq=the+hobbit&hl=&source=gbs_api",
+    "canonicalVolumeLink": "https://books.google.com/books/about/The_Hobbit_Or_There_and_Back_Again.html?hl=&id=hiEVPwAACAAJ"
+   },
+   "saleInfo": {
+    "country": "US",
+    "saleability": "NOT_FOR_SALE",
+    "isEbook": false
+   },
+   "accessInfo": {
+    "country": "US",
+    "viewability": "NO_PAGES",
+    "embeddable": false,
+    "publicDomain": false,
+    "textToSpeechPermission": "ALLOWED",
+    "epub": {
+     "isAvailable": false
+    },
+    "pdf": {
+     "isAvailable": false
+    },
+    "webReaderLink": "http://play.google.com/books/reader?id=hiEVPwAACAAJ&hl=&printsec=frontcover&output=reader&source=gbs_api",
+    "accessViewStatus": "NONE",
+    "quoteSharingAllowed": false
+   }
+  },
+  {
+   "kind": "books#volume",
+   "id": "AlDHsgEACAAJ",
+   "etag": "FFBoEENPqXk",
+   "selfLink": "https://www.googleapis.com/books/v1/volumes/AlDHsgEACAAJ",
+   "volumeInfo": {
+    "title": "The Hobbit",
+    "subtitle": "Or There and Back Again (J.R.R. Tolkien)",
+    "authors": [
+     "Editorial Editorial World"
+    ],
+    "publisher": "CreateSpace",
+    "publishedDate": "2015-06-10",
+    "description": "Bilbo Baggins is a hobbit who enjoys a comfortable, unambitious life, rarely traveling any farther than his pantry or cellar. But his contentment is disturbed when the wizard Gandalf and a company of dwarves arrive on his doorstep one day to whisk him away on an adventure. They have launched a plot to raid the treasure hoard guarded by Smaug the Magnificent, a large and very dangerous dragon. Bilbo reluctantly joins their quest, unaware that on his journey to the Lonely Mountain he will encounter both a magic ring and a frightening creature known as Gollum. \"A glorious account of a magnificent adventure, filled with suspense and seasoned with a quiet humor that is irresistible . . . All those, young or old, who love a fine adventurous tale, beautifully told, will take The Hobbit to their hearts.\"",
+    "industryIdentifiers": [
+     {
+      "type": "ISBN_10",
+      "identifier": "1514309238"
+     },
+     {
+      "type": "ISBN_13",
+      "identifier": "9781514309230"
+     }
+    ],
+    "readingModes": {
+     "text": false,
+     "image": false
+    },
+    "pageCount": 118,
+    "printType": "BOOK",
+    "averageRating": 4.5,
+    "ratingsCount": 51,
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": false,
+    "contentVersion": "preview-1.0.0",
+    "imageLinks": {
+     "smallThumbnail": "http://books.google.com/books/content?id=AlDHsgEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+     "thumbnail": "http://books.google.com/books/content?id=AlDHsgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+    },
+    "language": "en",
+    "previewLink": "http://books.google.com/books?id=AlDHsgEACAAJ&dq=the+hobbit&hl=&cd=8&source=gbs_api",
+    "infoLink": "http://books.google.com/books?id=AlDHsgEACAAJ&dq=the+hobbit&hl=&source=gbs_api",
+    "canonicalVolumeLink": "https://books.google.com/books/about/The_Hobbit.html?hl=&id=AlDHsgEACAAJ"
+   },
+   "saleInfo": {
+    "country": "US",
+    "saleability": "NOT_FOR_SALE",
+    "isEbook": false
+   },
+   "accessInfo": {
+    "country": "US",
+    "viewability": "NO_PAGES",
+    "embeddable": false,
+    "publicDomain": false,
+    "textToSpeechPermission": "ALLOWED",
+    "epub": {
+     "isAvailable": false
+    },
+    "pdf": {
+     "isAvailable": false
+    },
+    "webReaderLink": "http://play.google.com/books/reader?id=AlDHsgEACAAJ&hl=&printsec=frontcover&output=reader&source=gbs_api",
+    "accessViewStatus": "NONE",
+    "quoteSharingAllowed": false
+   },
+   "searchInfo": {
+    "textSnippet": "A tale of adventure, in which a company of dwarves search for dragon-guarded gold. A reluctant partner in the quest is Bilbo Baggins, an unambitious hobbit, who surprises even himself by his skill and resourcefulness as a burglar."
+   }
+  },
+  {
+   "kind": "books#volume",
+   "id": "N_0VhzQKIIAC",
+   "etag": "ZMGk/HCIrnw",
+   "selfLink": "https://www.googleapis.com/books/v1/volumes/N_0VhzQKIIAC",
+   "volumeInfo": {
+    "title": "Finding God in the Hobbit",
+    "authors": [
+     "Jim Ware"
+    ],
+    "publisher": "Tyndale House Publishers, Inc.",
+    "publishedDate": "2006",
+    "description": "Indulges readers with an exploration of the spiritual significance of J.R.R. Tolkien's famous children's classic.",
+    "industryIdentifiers": [
+     {
+      "type": "ISBN_10",
+      "identifier": "1414305966"
+     },
+     {
+      "type": "ISBN_13",
+      "identifier": "9781414305967"
+     }
+    ],
+    "readingModes": {
+     "text": false,
+     "image": true
+    },
+    "pageCount": 177,
+    "printType": "BOOK",
+    "categories": [
+     "Literary Criticism"
+    ],
+    "averageRating": 4.5,
+    "ratingsCount": 12,
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": true,
+    "contentVersion": "1.0.1.0.preview.1",
+    "imageLinks": {
+     "smallThumbnail": "http://books.google.com/books/content?id=N_0VhzQKIIAC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+     "thumbnail": "http://books.google.com/books/content?id=N_0VhzQKIIAC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    },
+    "language": "en",
+    "previewLink": "http://books.google.com/books?id=N_0VhzQKIIAC&printsec=frontcover&dq=the+hobbit&hl=&cd=9&source=gbs_api",
+    "infoLink": "http://books.google.com/books?id=N_0VhzQKIIAC&dq=the+hobbit&hl=&source=gbs_api",
+    "canonicalVolumeLink": "https://books.google.com/books/about/Finding_God_in_the_Hobbit.html?hl=&id=N_0VhzQKIIAC"
+   },
+   "saleInfo": {
+    "country": "US",
+    "saleability": "NOT_FOR_SALE",
+    "isEbook": false
+   },
+   "accessInfo": {
+    "country": "US",
+    "viewability": "PARTIAL",
+    "embeddable": true,
+    "publicDomain": false,
+    "textToSpeechPermission": "ALLOWED",
+    "epub": {
+     "isAvailable": false
+    },
+    "pdf": {
+     "isAvailable": true,
+     "acsTokenLink": "http://books.google.com/books/download/Finding_God_in_the_Hobbit-sample-pdf.acsm?id=N_0VhzQKIIAC&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+    },
+    "webReaderLink": "http://play.google.com/books/reader?id=N_0VhzQKIIAC&hl=&printsec=frontcover&output=reader&source=gbs_api",
+    "accessViewStatus": "SAMPLE",
+    "quoteSharingAllowed": false
+   },
+   "searchInfo": {
+    "textSnippet": "But this story of unexpected adventure is far more than goblin attacks, dragon-hoards, and riddles in the dark."
+   }
+  },
+  {
+   "kind": "books#volume",
+   "id": "m7vyAAAAMAAJ",
+   "etag": "R/P+rMut1VI",
+   "selfLink": "https://www.googleapis.com/books/v1/volumes/m7vyAAAAMAAJ",
+   "volumeInfo": {
+    "title": "The Hobbit",
+    "subtitle": "Or, There and Back Again",
+    "authors": [
+     "John Ronald Reuel Tolkien"
+    ],
+    "publisher": "Houghton Mifflin Harcourt",
+    "publishedDate": "1966",
+    "description": "The adventures of the well-to-do hobbit, Bilbo, Baggins, who lived happily in his comfortable home until a wandering wizard granted his wish.",
+    "industryIdentifiers": [
+     {
+      "type": "OTHER",
+      "identifier": "IND:39000004624495"
+     }
+    ],
+    "readingModes": {
+     "text": false,
+     "image": false
+    },
+    "pageCount": 317,
+    "printType": "BOOK",
+    "categories": [
+     "Fiction"
+    ],
+    "averageRating": 4.0,
+    "ratingsCount": 2626,
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": false,
+    "contentVersion": "1.1.1.0.preview.0",
+    "imageLinks": {
+     "smallThumbnail": "http://books.google.com/books/content?id=m7vyAAAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+     "thumbnail": "http://books.google.com/books/content?id=m7vyAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+    },
+    "language": "en",
+    "previewLink": "http://books.google.com/books?id=m7vyAAAAMAAJ&q=the+hobbit&dq=the+hobbit&hl=&cd=10&source=gbs_api",
+    "infoLink": "http://books.google.com/books?id=m7vyAAAAMAAJ&dq=the+hobbit&hl=&source=gbs_api",
+    "canonicalVolumeLink": "https://books.google.com/books/about/The_Hobbit.html?hl=&id=m7vyAAAAMAAJ"
+   },
+   "saleInfo": {
+    "country": "US",
+    "saleability": "NOT_FOR_SALE",
+    "isEbook": false
+   },
+   "accessInfo": {
+    "country": "US",
+    "viewability": "NO_PAGES",
+    "embeddable": false,
+    "publicDomain": false,
+    "textToSpeechPermission": "ALLOWED",
+    "epub": {
+     "isAvailable": false
+    },
+    "pdf": {
+     "isAvailable": false
+    },
+    "webReaderLink": "http://play.google.com/books/reader?id=m7vyAAAAMAAJ&hl=&printsec=frontcover&output=reader&source=gbs_api",
+    "accessViewStatus": "NONE",
+    "quoteSharingAllowed": false
+   },
+   "searchInfo": {
+    "textSnippet": "The adventures of the well-to-do hobbit, Bilbo, Baggins, who lived happily in his comfortable home until a wandering wizard granted his wish."
+   }
+  }
+ ]
+}

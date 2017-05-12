@@ -1,5 +1,4 @@
-import { Component } from 'react'
-import { BookRow } from './BookRow'
+import { BookRow } from './BookRow';
 
 export const BookList = ({data}) => (
 	<table>
@@ -12,9 +11,8 @@ export const BookList = ({data}) => (
 		<tbody>
 			{data.map((entry, i) =>
 				<BookRow key = {i}
-				title = {entry.volumeInfo.title}
-				author = {entry.volumeInfo.authors[0]}
-				onClick = {handleClick()}
+				title = {entry.title}
+				author = {entry.authors}
 				/>
 			)}
 		</tbody>
