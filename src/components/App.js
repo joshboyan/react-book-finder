@@ -21,9 +21,10 @@ export class App extends Component {
 	}	
 
 	componentDidMount() {
-		this.serverRequest = fetch("https://www.googleapis.com/books/v1/volumes?q=the+hobbit")
+		this.serverRequest = fetch("https://www.googleapis.com/books/v1/volumes?q=intitle:lord+of+the+flies")
 			.then(response => response.json())
 			.then((data) => {
+				console.log(data)
 				data.items.forEach((item, i) => {
 					let element = {}
 					if (typeof item.volumeInfo.title != 'undefined') { 
@@ -56,14 +57,12 @@ export class App extends Component {
 						element.thumbnail = item.volumeInfo.imageLinks.thumbnail;
 					} else {
 						element.thumbnail = null;
-					}					
-					//console.log(element);
+					}	
 					this.setState(this.state.items.splice(i, 1, element));
 				})				
 		}).catch((err) => {
 				console.error('There was an error fetching data', err);
 			})
-		//this.forceUpdate();
 	}
 
 	componentWillUnmount() {
@@ -73,6 +72,7 @@ export class App extends Component {
  	render() {
 		return(
 			<div className="app">
+				<DashBoard />
 				<Highlight data={this.state.items[0]}
 				/>
 				<BookList data={this.state.items} />

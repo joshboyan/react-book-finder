@@ -1,16 +1,29 @@
-import { Component } from 'react'
+export const DashBoard = ({type, query}) => {
+	
+	let _type, _query;
 
-export class DashBoard extends Component {
-	/*makeRequest: function() {
-		this.props.handleClick();
-	}*/
-	render() {
-		return(
-			<form action="">
-				<label htmlFor=""></label>
-				<input type="text"/>
-				<input type="submit"/>
-			</form>
-		)
+	const submit = (e) => {
+		e.preventDefault();
+		console.log(_type.value, _query.value);
 	}
+	
+	return(
+		<div className="book-form">
+		<form onSubmit={submit}>
+			<select name="" id="" defaultValue={type} ref={option => _type = option}>
+				<option value="q=intitle:">Title</option>
+				<option value="q=inauthor:">Author</option>
+				<option value="q=subject:">Subject</option>
+			</select>
+			<label htmlFor="query"></label>
+			<input id="query" type="text" defaultValue={query} ref={input => _query = input}/>
+			<button>Search</button>
+		</form>
+		</div>
+	)
+}
+
+DashBoard.defaultProps = {
+	type: "q=intitle",
+	query: "hobbit"
 }
