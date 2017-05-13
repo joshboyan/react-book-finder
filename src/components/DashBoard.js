@@ -12,24 +12,25 @@ export const DashBoard = ({type, query, queryObject}) => {
 	}
 	
 	return(
-		<div className="book-form">
+		<nav className="book-form">
 		<form onSubmit={submit}>
-			<select name="" id="" defaultValue={type} ref={option => _type = option}>
+			<select aria-label="Drop-down list for book search category"
+						  defaultValue={type} 
+						  ref={option => _type = option}>
 				<option value="q=intitle:">Title</option>
 				<option value="q=inauthor:">Author</option>
 				<option value="q=subject:">Subject</option>
 			</select>
-			<label htmlFor="query"></label>
-			<input id="query" type="text" defaultValue={query} ref={input => _query = input}/>
-			<button>Search</button>
+			<input aria-label="Book search box" 
+			       type="text" 
+			       defaultValue={query} 
+			       ref={input => _query = input}
+			       placeholder="Enter search terms"/>
+			<input type="submit"
+						 value="Search"/>
 		</form>
-		</div>
+		</nav>
 	)
-}
-
-DashBoard.defaultProps = {
-	type: "q=intitle",
-	query: "hobbit"
 }
 
 DashBoard.propTypes = {

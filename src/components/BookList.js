@@ -4,7 +4,7 @@ import { BookRow } from './BookRow';
 export const BookList = ({data, highlight}) => {
 
 	return(
-		<table>
+		<table summary="Selection List of books returned from search">
 			<thead>
 				<tr>
 					<th>Title</th>
