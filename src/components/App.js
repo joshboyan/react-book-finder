@@ -16,15 +16,18 @@ export class App extends Component {
 	    		"description": "Chronicles the adventures of the inhabitants of Middle-earth and Bilbo Baggins, the hobbit who brought home to The Shire the One Ring of Power",
 					"thumbnail": "http://books.google.com/books/content?id=hFfhrCWiLSMC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"			
 				}
-			]
+			],
+			queryObject: {
+				type: 'q=intitle:',
+				query: 'the+hobbit'
+			}
 		}
+		this.updateQuery = this.updateQuery.bind(this);
 	}	
-
-	componentDidMount() {
-		this.serverRequest = fetch("https://www.googleapis.com/books/v1/volumes?q=intitle:lord+of+the+flies")
+	fetchQuery() {
+		this.serverRequest = fetch('https://www.googleapis.com/books/v1/volumes?' + this.state.queryObject.type + this.state.queryObject.query)
 			.then(response => response.json())
 			.then((data) => {
-				console.log(data)
 				data.items.forEach((item, i) => {
 					let element = {}
 					if (typeof item.volumeInfo.title != 'undefined') { 
@@ -64,17 +67,30 @@ export class App extends Component {
 				console.error('There was an error fetching data', err);
 			});
 	}
+	componentDidMount() {
+		this.fetchQuery();
+	}
 
 	componentWillUnmount() {
 		this.serverRequest.abort();
 	}
 
+	updateQuery(queryObject) {
+		this.setState({
+			queryObject: {
+				type: queryObject.type,
+				query: queryObject.query
+			}
+		}, function() {
+			this.fetchQuery();
+		});
+	}
+
  	render() {
 		return(
 			<div className="app">
-				<DashBoard />
-				<Highlight data={this.state.items[0]}
-				/>
+				<DashBoard queryObject={this.updateQuery} />
+				<Highlight data={this.state.items[0]} />
 				<BookList data={this.state.items} />
 			</div>
 		)

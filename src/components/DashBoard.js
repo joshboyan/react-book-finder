@@ -1,11 +1,14 @@
 import PropTypes from 'prop-types';
-export const DashBoard = ({type, query}) => {
+export const DashBoard = ({type, query, queryObject}) => {
 	
 	let _type, _query;
 
 	const submit = (e) => {
 		e.preventDefault();
-		console.log(_type.value, _query.value);
+		queryObject({
+			type: _type.value,
+			query: _query.value
+		});
 	}
 	
 	return(
