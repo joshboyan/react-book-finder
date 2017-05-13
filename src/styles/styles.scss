@@ -1,3 +1,92 @@
+@import 'support-for';
+@import 'normalize/variables';
+@import 'normalize/vertical-rhythm';
+@import 'normalize/normalize-mixin';
+@import 'variables.scss';
+
+/******
+
+ Styles
+
+******/
+
+html {
+
+}
 body {
-	
+	header {
+
+	}
+	main {
+		nav {
+
+		}
+		#book-highlight {
+
+		}
+		table {
+
+		}
+	}
+	footer {
+
+	}
+}
+
+/******
+
+Medium Styles
+
+******/
+@media only screen and (min-width:550px) {}
+html {
+
+}
+body {
+	header {
+
+	}
+	main {
+		nav {
+
+		}
+		#book-highlight {
+
+		}
+		table {
+
+		}
+	}
+	footer {
+
+	}
+}
+
+/******
+
+Large Styles
+
+******/
+
+html {
+
+}
+body {
+	header {
+
+	}
+	main {
+		nav {
+
+		}
+		#book-highlight {
+
+		}
+		table {
+
+		}
+	}
+	footer {
+
+	}
 }
