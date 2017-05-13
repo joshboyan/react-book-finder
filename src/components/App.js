@@ -4,6 +4,7 @@ import { Highlight } from './Highlight';
 import { BookList } from './BookList';
 
 export class App extends Component {
+
 	constructor(props) {
 		super(props)
 		this.state = {
@@ -20,10 +21,13 @@ export class App extends Component {
 			queryObject: {
 				type: 'q=intitle:',
 				query: 'the+hobbit'
-			}
+			},
+			highlight: 0
 		}
 		this.updateQuery = this.updateQuery.bind(this);
+		this.updateHighlight = this.updateHighlight.bind(this);
 	}	
+
 	fetchQuery() {
 		this.serverRequest = fetch('https://www.googleapis.com/books/v1/volumes?' + this.state.queryObject.type + this.state.queryObject.query)
 			.then(response => response.json())
@@ -67,6 +71,7 @@ export class App extends Component {
 				console.error('There was an error fetching data', err);
 			});
 	}
+
 	componentDidMount() {
 		this.fetchQuery();
 	}
@@ -81,8 +86,16 @@ export class App extends Component {
 				type: queryObject.type,
 				query: queryObject.query
 			}
-		}, function() {
+		}, () => {
 			this.fetchQuery();
+		});
+	}
+
+	updateHighlight(highlight) {
+		this.setState({
+			highlight: highlight.highlight
+		}, () => {
+			console.log(highlight);
 		});
 	}
 
@@ -90,8 +103,9 @@ export class App extends Component {
 		return(
 			<div className="app">
 				<DashBoard queryObject={this.updateQuery} />
-				<Highlight data={this.state.items[0]} />
-				<BookList data={this.state.items} />
+				<Highlight data={this.state.items[this.state.highlight]} />
+				<BookList data={this.state.items}
+									highlight={this.updateHighlight} />
 			</div>
 		)
 	}
