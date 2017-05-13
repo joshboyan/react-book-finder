@@ -12,6 +12,7 @@ export class App extends Component {
 				{
 					"title": "The Hobbit, Or, There and Back Again",
 					"authors": "John Ronald Reuel Tolkien",
+					"rating": 4,
 					"publisher": "Del Rey Books",
 	    		"publishedDate": "1982",
 	    		"description": "Chronicles the adventures of the inhabitants of Middle-earth and Bilbo Baggins, the hobbit who brought home to The Shire the One Ring of Power",
@@ -20,7 +21,7 @@ export class App extends Component {
 			],
 			queryObject: {
 				type: 'q=intitle:',
-				query: 'the+hobbit'
+				query: 'lord+of+the'
 			},
 			highlight: 0
 		}
@@ -32,6 +33,7 @@ export class App extends Component {
 		this.serverRequest = fetch('https://www.googleapis.com/books/v1/volumes?' + this.state.queryObject.type + this.state.queryObject.query)
 			.then(response => response.json())
 			.then((data) => {
+				console.log(data);
 				data.items.forEach((item, i) => {
 					let element = {}
 					if (typeof item.volumeInfo.title != 'undefined') { 
@@ -41,6 +43,11 @@ export class App extends Component {
 					}
 					if ( typeof item.volumeInfo.authors != 'undefined') {
 						element.authors =  item.volumeInfo.authors[0];
+					} else {
+						element.authors = null;
+					}
+					if ( typeof item.volumeInfo.averageRating != 'undefined') {
+						element.rating =  item.volumeInfo.averageRating;
 					} else {
 						element.authors = null;
 					}

@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+
 export const DashBoard = ({type, query, queryObject}) => {
 	
 	let _type, _query;
@@ -13,6 +14,7 @@ export const DashBoard = ({type, query, queryObject}) => {
 	
 	return(
 		<nav className="book-form">
+		<h1>React Book Finder</h1>
 		<form onSubmit={submit}>
 			<select aria-label="Drop-down list for book search category"
 						  defaultValue={type} 
@@ -25,7 +27,8 @@ export const DashBoard = ({type, query, queryObject}) => {
 			       type="text" 
 			       defaultValue={query} 
 			       ref={input => _query = input}
-			       placeholder="Enter search terms"/>
+			       placeholder="Enter search terms"
+			       autoFocus/>
 			<input type="submit"
 						 value="Search"/>
 		</form>

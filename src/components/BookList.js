@@ -4,24 +4,19 @@ import { BookRow } from './BookRow';
 export const BookList = ({data, highlight}) => {
 
 	return(
-		<table summary="Selection List of books returned from search">
-			<thead>
-				<tr>
-					<th>Title</th>
-					<th>Author</th>
-				</tr>
-			</thead>
-			<tbody>
+		<section id="book-list"
+						 aria-label="List of books returned from search">
 				{data.map((entry, i) =>
 					<BookRow key = {i}
-					rowNumber = {i}
-					title = {entry.title}
-					author = {entry.authors}
-					highlight = {highlight}
+									 id = {i}
+					         rowNumber = {i}
+					         title = {entry.title}
+					         author = {entry.authors}
+					         rating = {entry.rating}
+					         highlight = {highlight}
 					/>
 				)}
-			</tbody>
-		</table>
+			</section>
 	)
 }
 
