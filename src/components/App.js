@@ -23,7 +23,11 @@ export class App extends Component {
 				type: 'q=intitle:',
 				query: 'lord+of+the'
 			},
-			highlight: 0
+			highlight: 0,
+			visibility: {
+				highlight: false,
+				bookist: false
+			}
 		}
 		this.updateQuery = this.updateQuery.bind(this);
 		this.updateHighlight = this.updateHighlight.bind(this);
@@ -73,7 +77,8 @@ export class App extends Component {
 						element.thumbnail = null;
 					}	
 					this.setState(this.state.items.splice(i, 1, element));
-				})				
+				})
+				console.log(document.getElementsByClassName('book-form'));				
 		}).catch((err) => {
 				console.error('There was an error fetching data', err);
 			});
@@ -92,6 +97,10 @@ export class App extends Component {
 			queryObject: {
 				type: queryObject.type,
 				query: queryObject.query
+			},
+			visibility: {
+				highlight: false,
+				booklist: true
 			}
 		}, () => {
 			this.fetchQuery();
@@ -100,9 +109,11 @@ export class App extends Component {
 
 	updateHighlight(highlight) {
 		this.setState({
-			highlight: highlight.highlight
-		}, () => {
-			console.log(highlight);
+			highlight: highlight.highlight,
+			visibility: {
+				highlight: true,
+				booklist: true
+			}
 		});
 	}
 
@@ -110,9 +121,11 @@ export class App extends Component {
 		return(
 			<div className="app">
 				<DashBoard queryObject={this.updateQuery} />
-				<Highlight data={this.state.items[this.state.highlight]} />
+				<Highlight data={this.state.items[this.state.highlight]}
+									 visibility={this.state.visibility.highlight}/>
 				<BookList data={this.state.items}
-									highlight={this.updateHighlight} />
+									highlight={this.updateHighlight}
+									visibility={this.state.visibility.booklist} />
 			</div>
 		)
 	}

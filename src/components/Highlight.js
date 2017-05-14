@@ -3,7 +3,7 @@ import MdStarHalf from 'react-icons/lib/md/star-half';
 import MdStarOutline from 'react-icons/lib/md/star-outline';
 import MdStar from 'react-icons/lib/md/star';
 
-export const Highlight = ({data}) => {
+export const Highlight = ({data, visibility}) => {
 	const renderStars = (rating) => {
 		let stars = [];
 		let i, j;
@@ -20,21 +20,23 @@ export const Highlight = ({data}) => {
 		}	
 			return stars;
 	}
-
-	return (
-		<section id="book-highlight" 
-						 aria-label="Area showing information about book selected from list">
-			<h2>{data.title}</h2>
-			<h3>{(data.authors) ? <span>by</span> : null}{data.authors}</h3>
-			<span>{renderStars(data.rating)}</span>
-			<p><img src={data.thumbnail} alt={data.title}/>{data.description}</p>
-			<div>
-				<span>{data.publisher}</span>
-				<span>{data.publishedDate}</span>
-			</div>
-			<div><a href="">Purchase</a></div>
-		</section>
-	)
+	if (visibility) {
+		return (
+			<section id="book-highlight" 
+							 aria-label="Area showing information about book selected from list">
+				<h2>{data.title}</h2>
+				<h3>{(data.authors) ? <span>by</span> : null}{data.authors}</h3>
+				<span>{renderStars(data.rating)}</span>
+				<p><img src={data.thumbnail} alt={data.title}/>{data.description}</p>
+				<div>
+					<span>{data.publisher}</span>
+					<span>{data.publishedDate}</span>
+				</div>
+			</section>
+		)
+	} else {
+		return null;
+	}
 }
 
 Highlight.propTypes = {

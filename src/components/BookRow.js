@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import MdStarHalf from 'react-icons/lib/md/star-half';
 import MdStarOutline from 'react-icons/lib/md/star-outline';
 import MdStar from 'react-icons/lib/md/star';
+import Scroll from 'react-scroll';
 
 export const BookRow = ({rowNumber, title, author, rating, highlight}) => {
 
@@ -10,6 +11,7 @@ export const BookRow = ({rowNumber, title, author, rating, highlight}) => {
 		highlight({
 			highlight: rowNumber
 		})
+		Scroll.animateScroll.scrollTo(200);
 	}
 
 	const renderStars = (rating) => {
