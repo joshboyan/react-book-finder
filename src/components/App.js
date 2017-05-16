@@ -39,7 +39,7 @@ export class App extends Component {
 			.then((data) => {
 				console.log(data);
 				data.items.forEach((item, i) => {
-					let element = {}
+					let element = {};
 					if (typeof item.volumeInfo.title != 'undefined') { 
 						element.title = item.volumeInfo.title;
 					} else {
@@ -95,8 +95,8 @@ export class App extends Component {
 	updateQuery(queryObject) {
 		this.setState({
 			queryObject: {
-				type: queryObject.type,
-				query: queryObject.query
+				type,
+				query
 			},
 			visibility: {
 				highlight: false,
@@ -109,7 +109,7 @@ export class App extends Component {
 
 	updateHighlight(highlight) {
 		this.setState({
-			highlight: highlight.highlight,
+			highlight,
 			visibility: {
 				highlight: true,
 				booklist: true

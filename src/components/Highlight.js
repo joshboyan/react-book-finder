@@ -4,6 +4,7 @@ import MdStarOutline from 'react-icons/lib/md/star-outline';
 import MdStar from 'react-icons/lib/md/star';
 
 export const Highlight = ({data, visibility}) => {
+	const { title, authors, rating, thumbnail, publisher, publishedDate } = this.data;
 	const renderStars = (rating) => {
 		let stars = [];
 		let i, j;
