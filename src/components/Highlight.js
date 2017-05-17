@@ -3,8 +3,11 @@ import MdStarHalf from 'react-icons/lib/md/star-half';
 import MdStarOutline from 'react-icons/lib/md/star-outline';
 import MdStar from 'react-icons/lib/md/star';
 
-export const Highlight = ({data, visibility}) => {
-	const { title, authors, rating, thumbnail, publisher, publishedDate } = this.data;
+export const Highlight = ({data, visibility, addFavorite}) => {
+	
+	const { title, authors, rating, ratingsCount, thumbnail, 
+		publisher, publishedDate, description, price, purchase } = data;
+	
 	const renderStars = (rating) => {
 		let stars = [];
 		let i, j;
@@ -21,17 +24,28 @@ export const Highlight = ({data, visibility}) => {
 		}	
 			return stars;
 	}
+
+	const addToFavorites = () => {
+		console.log('Added to favorites', data);
+		addFavorite(data);
+	}
+
 	if (visibility) {
 		return (
 			<section id="book-highlight" 
 							 aria-label="Area showing information about book selected from list">
-				<h2>{data.title}</h2>
-				<h3>{(data.authors) ? <span>by</span> : null}{data.authors}</h3>
-				<span>{renderStars(data.rating)}</span>
-				<p><img src={data.thumbnail} alt={data.title}/>{data.description}</p>
+				<h2>{title}</h2>
+				<h3>{(authors) ? <span>by</span> : null}{authors}</h3>
+				<span>{renderStars(data.rating)} <span>({ratingsCount})</span></span>
+				<p><img src={thumbnail} alt={title}/>{description}</p>
 				<div>
-					<span>{data.publisher}</span>
-					<span>{data.publishedDate}</span>
+					<span>{publisher}</span>
+					<span>{publishedDate}</span>
+				</div>
+				<hr/>
+				<div>
+					<button onClick={() => {addToFavorites()}}><MdStar /> Favorite</button>
+					{(price) ? <a href={purchase}> Buy ${price}</a> : null}
 				</div>
 			</section>
 		)

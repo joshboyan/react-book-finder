@@ -9,6 +9,13 @@
 
 ******/
 
+@mixin buttons {
+  border: 1px solid $primary-color-dark;
+  background: linear-gradient(to bottom, $primary-color, $primary-color-dark);
+  font: bold 1rem/1 $font2;
+  color: $primary-color-text;
+  text-shadow: 1px 1px 1px $primary-text-color;
+}
 html {
 	font-size: 16px;
 }
@@ -17,11 +24,15 @@ body {
 	main {
 		nav,
 		#book-highlight,
-		#book-list div {
+		#book-list div,
+		#favorites div {
 			background-color: $primary-color-text;
 			border-bottom: .3rem solid $primary-color;
 			box-shadow: .3rem .3rem .3rem $secondary-text-color;
 		}	
+		#favorites div {
+			border-bottom: .3rem solid $accent-color;
+		}
 		nav {
 			margin-bottom: 1rem;
 			padding: .5rem 0 1.25rem 2%;
@@ -32,12 +43,8 @@ body {
 			}
 			select,
 			input[type="submit"] {
+				@include buttons;
 				width: 22.5%;
-		    border: 1px solid $primary-color-dark;
-		    background: linear-gradient(to bottom, $primary-color, $primary-color-dark);
-		    font: bold 1rem/1 $font2;
-		    color: $primary-color-text;
-		    text-shadow: 1px 1px 1px $primary-text-color;
 			}
 			select {	
 			  height: 49px;    
@@ -84,6 +91,9 @@ body {
 				padding: .75rem;
 				font-size: 2rem;
 				color: $accent-color;
+				span {
+					color: $secondary-text-color;
+				}
 			}
 			p {
 				padding: .75rem;
@@ -105,8 +115,25 @@ body {
 					}
 				}
 			}
+			hr {
+				width: 90%;
+			}
+			button,
+			a {
+				@include buttons;				
+				margin: 1rem 0 1em 12.5%;
+				border-radius: 15px;
+				text-decoration: none;
+			}
+			button {
+				padding: 1rem;
+			}
+			a {
+				padding: 1rem;
+			}
 		}
-		#book-list {
+		#book-list,
+		#favorites {
 			div {
 			  margin: .6rem 0;
 				min-height: 60px;
@@ -121,6 +148,7 @@ body {
 				}
 			}
 		}
+
 	}
 	@keyframes rowAnimation {
 				0% {

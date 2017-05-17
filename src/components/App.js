@@ -2,6 +2,8 @@ import { Component } from 'react';
 import { DashBoard } from './DashBoard';
 import { Highlight } from './Highlight';
 import { BookList } from './BookList';
+import { Favorites } from './Favorites';
+import { Menu } from './Menu';
 
 export class App extends Component {
 
@@ -16,7 +18,9 @@ export class App extends Component {
 					"publisher": "Del Rey Books",
 	    		"publishedDate": "1982",
 	    		"description": "Chronicles the adventures of the inhabitants of Middle-earth and Bilbo Baggins, the hobbit who brought home to The Shire the One Ring of Power",
-					"thumbnail": "http://books.google.com/books/content?id=hFfhrCWiLSMC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"			
+					"thumbnail": "http://books.google.com/books/content?id=hFfhrCWiLSMC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+					"price": 9.99,
+					"purchase": "http://books.google.com"		
 				}
 			],
 			queryObject: {
@@ -26,11 +30,24 @@ export class App extends Component {
 			highlight: 0,
 			visibility: {
 				highlight: false,
-				bookist: false
-			}
+				bookist: false, 
+				favorites: false
+			},
+			favorites: [
+				{
+					"title": "My Favorite",
+					"authors": "John Ronald Reuel Tolkien",
+					"rating": 4,
+					"publisher": "Del Rey Books",
+	    		"publishedDate": "1982",
+	    		"description": "Chronicles the adventures of the inhabitants of Middle-earth and Bilbo Baggins, the hobbit who brought home to The Shire the One Ring of Power",
+					"thumbnail": "http://books.google.com/books/content?id=hFfhrCWiLSMC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"			
+				}
+			]
 		}
 		this.updateQuery = this.updateQuery.bind(this);
 		this.updateHighlight = this.updateHighlight.bind(this);
+		this.addFavorite = this.addFavorite.bind(this);
 	}	
 
 	fetchQuery() {
@@ -53,7 +70,12 @@ export class App extends Component {
 					if ( typeof item.volumeInfo.averageRating != 'undefined') {
 						element.rating =  item.volumeInfo.averageRating;
 					} else {
-						element.authors = null;
+						element.rating = null;
+					}
+					if ( typeof item.volumeInfo.ratingsCount != 'undefined') {
+						element.ratingsCount =  item.volumeInfo.ratingsCount;
+					} else {
+						element.ratingsCount = null;
 					}
 					if ( typeof item.volumeInfo.publisher != 'undefined') {
 						element.publisher = item.volumeInfo.publisher;
@@ -76,6 +98,21 @@ export class App extends Component {
 					} else {
 						element.thumbnail = null;
 					}	
+					if ( typeof item.saleInfo.listPrice != 'undefined') {
+						element.price = item.saleInfo.listPrice.amount;
+					} else {
+						element.price = null;
+					}	
+					if ( typeof item.saleInfo.buyLink != 'undefined') {
+						element.purchase = item.saleInfo.buyLink;
+					} else {
+						element.price = null;
+					}	
+					if ( typeof item.volumeInfo.description != 'undefined') {
+						element.description = item.volumeInfo.description;
+					} else {
+						element.description = null;
+					}	
 					this.setState(this.state.items.splice(i, 1, element));
 				})
 				console.log(document.getElementsByClassName('book-form'));				
@@ -95,12 +132,13 @@ export class App extends Component {
 	updateQuery(queryObject) {
 		this.setState({
 			queryObject: {
-				type,
-				query
+				type: queryObject.type,
+				query: queryObject.query
 			},
 			visibility: {
 				highlight: false,
-				booklist: true
+				booklist: true,
+				favorites: false
 			}
 		}, () => {
 			this.fetchQuery();
@@ -109,12 +147,36 @@ export class App extends Component {
 
 	updateHighlight(highlight) {
 		this.setState({
-			highlight,
+			highlight: highlight.highlight,
 			visibility: {
 				highlight: true,
-				booklist: true
+				booklist: true,
+				favorites: false
 			}
 		});
+	}
+
+	updateFavoriteHighlight(highlight) {
+		this.setState({
+			highlight: highlight.highlight,
+			visibility: {
+				highlight: true,
+				booklist: false,
+				favorites: true
+			}
+		});
+	}
+
+	addFavorite(data) {
+		this.setState({
+			visibility: {
+				highlight: false,
+				booklist: false,
+				favorites: true
+			},
+			favorites: [data, ...this.state.favorites]
+		});
+		console.log('We made it all the way to the app!');
 	}
 
  	render() {
@@ -122,10 +184,15 @@ export class App extends Component {
 			<div className="app">
 				<DashBoard queryObject={this.updateQuery} />
 				<Highlight data={this.state.items[this.state.highlight]}
-									 visibility={this.state.visibility.highlight}/>
+									 visibility={this.state.visibility.highlight}
+									 addFavorite={this.addFavorite}/>
 				<BookList data={this.state.items}
 									highlight={this.updateHighlight}
 									visibility={this.state.visibility.booklist} />
+				<Favorites data={this.state.favorites}
+									 highlight={this.updateFavoriteHighlight}
+									 visibility={this.state.visibility.favorites} />
+				<Menu />
 			</div>
 		)
 	}
