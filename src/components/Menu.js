@@ -2,11 +2,13 @@ import FaHome from 'react-icons/lib/fa/home';
 import MdStar from 'react-icons/lib/md/star';
 import GoInfo from 'react-icons/lib/go/info';
 
-export const Menu = ({visibility}) => {
+export const Menu = ({setVisibility, visibility}) => {
+	
+	const color = { color: '#BDBDBD'};
 
 	const showFavorites = () => {
 		console.log(visibility);
-		visibility({
+		setVisibility({
 				highlight: false,
 				booklist: false,
 				favorites: true
@@ -15,7 +17,7 @@ export const Menu = ({visibility}) => {
 	}
 
 	const showHome = () => {
-		visibility({
+		setVisibility({
 			highlight: false,
 			booklist: true,
 			favorites: false
@@ -24,8 +26,12 @@ export const Menu = ({visibility}) => {
 
 	return (
 		<nav aria-label="App navigation" id="app-nav">
-			<span><MdStar onClick={() => showFavorites()}/></span>
-			<span><FaHome onClick={() => showHome()}/></span>
+			<span>{visibility.favorites ? 
+				<MdStar style={color} /> : 
+				<MdStar onClick={() => showFavorites()}/>}</span>
+			<span>{visibility.favorites ?
+				<FaHome onClick={() => showHome()}/> :
+			    <FaHome style={color} /> }</span>
 			<span><GoInfo /></span>
 		</nav>
 	)

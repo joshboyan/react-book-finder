@@ -107,6 +107,7 @@ body {
 			}
 			div {
 				clear: both;
+
 			  span {
 					padding: .6rem;
 					font: italic 1rem/1 $font1;
@@ -120,6 +121,10 @@ body {
 			hr {
 				width: 90%;
 			}
+			div:nth-of-type(2) {
+				min-height: 50px;
+				padding-top: 20px;
+			}
 			button,
 			a {
 				@include buttons;				
@@ -131,6 +136,7 @@ body {
 		}
 		#book-list,
 		#favorites {
+			margin-bottom: 75px;
 			div {
 			  
 				min-height: 60px;

@@ -39,8 +39,8 @@ export class App extends Component {
 					"authors": "John Ronald Reuel Tolkien",
 					"rating": 4,
 					"publisher": "Del Rey Books",
-	    		"publishedDate": "1982",
-	    		"description": "Chronicles the adventures of the inhabitants of Middle-earth and Bilbo Baggins, the hobbit who brought home to The Shire the One Ring of Power",
+	    			"publishedDate": "1982",
+	    			"description": "Chronicles the adventures of the inhabitants of Middle-earth and Bilbo Baggins, the hobbit who brought home to The Shire the One Ring of Power",
 					"thumbnail": "http://books.google.com/books/content?id=hFfhrCWiLSMC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"			
 				}
 			]
@@ -48,7 +48,9 @@ export class App extends Component {
 		this.updateQuery = this.updateQuery.bind(this);
 		this.updateHighlight = this.updateHighlight.bind(this);
 		this.addFavorite = this.addFavorite.bind(this);
+		this.updateFavoriteHighlight = this.updateFavoriteHighlight.bind(this);
 		this.updateVisibility = this.updateVisibility.bind(this);
+		this.removeFavorite = this.removeFavorite.bind(this);
 	}	
 
 	fetchQuery() {
@@ -175,17 +177,31 @@ export class App extends Component {
 				booklist: false,
 				favorites: true
 			},
-			favorites: [data, ...this.state.favorites]
+			favorites: [ ...this.state.favorites, data]
 		});
 		console.log('We made it all the way to the app!');
 	}
 
-	updateVisibility(visibility) {
+	removeFavorite() {
+		console.log("msg")
+		const remove = this.state.favorites;
+		remove.splice(this.state.highlight, 1);
 		this.setState({
 			visibility: {
-				highlight: visibility.highlight,
-				booklist: visibility.booklist,
-				favorites: visibility.favorites
+				highlight: false,
+				booklist: false,
+				favorites: true
+			},
+			favorites: [...remove]
+		});
+	}
+
+	updateVisibility(setVisibility) {
+		this.setState({
+			visibility: {
+				highlight: setVisibility.highlight,
+				booklist: setVisibility.booklist,
+				favorites: setVisibility.favorites
 			}
 		});
 	}
@@ -195,9 +211,13 @@ export class App extends Component {
 			<div className="app">
 				<DashBoard queryObject={this.updateQuery} />
 
-				<Highlight data={this.state.items[this.state.highlight]}
-						   visibility={this.state.visibility.highlight}
-						   addFavorite={this.addFavorite}/>
+				<Highlight data={this.state.visibility.favorites ?
+					this.state.favorites[this.state.highlight] :
+					this.state.items[this.state.highlight]}
+						   visibility={this.state.visibility}
+						   addFavorite={this.addFavorite}
+						   highlight={this.state.highlight}
+						   removeFavorite={this.removeFavorite}/>
 
 				<BookList data={this.state.items}
 						  highlight={this.updateHighlight}
@@ -207,7 +227,8 @@ export class App extends Component {
 						   highlight={this.updateFavoriteHighlight}
 						   visibility={this.state.visibility.favorites} />
 				
-				<Menu visibility={this.updateVisibility}/>
+				<Menu setVisibility={this.updateVisibility}
+					  visibility={this.state.visibility} />
 			</div>
 		)
 	}
