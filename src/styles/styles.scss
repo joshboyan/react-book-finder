@@ -20,12 +20,14 @@ html {
 	font-size: 16px;
 }
 body {
+	margin: 0;
 	background-color: $divider-color;
 	main {
-		nav,
+		#book-form,
 		#book-highlight,
 		#book-list div,
 		#favorites div {
+			margin: .5rem;
 			background-color: $primary-color-text;
 			border-bottom: .3rem solid $primary-color;
 			box-shadow: .3rem .3rem .3rem $secondary-text-color;
@@ -33,7 +35,7 @@ body {
 		#favorites div {
 			border-bottom: .3rem solid $accent-color;
 		}
-		nav {
+		#book-form {
 			margin-bottom: 1rem;
 			padding: .5rem 0 1.25rem 2%;
 
@@ -124,18 +126,13 @@ body {
 				margin: 1rem 0 1em 12.5%;
 				border-radius: 15px;
 				text-decoration: none;
-			}
-			button {
-				padding: 1rem;
-			}
-			a {
 				padding: 1rem;
 			}
 		}
 		#book-list,
 		#favorites {
 			div {
-			  margin: .6rem 0;
+			  
 				min-height: 60px;
 				overflow: auto;
 				padding: .6rem;
@@ -148,7 +145,19 @@ body {
 				}
 			}
 		}
-
+		#app-nav {
+			position: fixed;
+			bottom: 0;
+			width: 100%;
+			width: 100vw;
+			padding-bottom: .5rem;
+			background: $primary-text-color;
+			font-size: 3rem;
+			color: $primary-color-text;
+			span {
+				padding: 0 10%;
+			}
+		}
 	}
 	@keyframes rowAnimation {
 				0% {

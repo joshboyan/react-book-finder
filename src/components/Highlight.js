@@ -44,7 +44,7 @@ export const Highlight = ({data, visibility, addFavorite}) => {
 				</div>
 				<hr/>
 				<div>
-					<button onClick={() => {addToFavorites()}}><MdStar /> Favorite</button>
+					<button onClick={() => addToFavorites()}><MdStar /> Favorite</button>
 					{(price) ? <a href={purchase}> Buy ${price}</a> : null}
 				</div>
 			</section>

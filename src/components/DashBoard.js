@@ -5,6 +5,7 @@ export const DashBoard = ({type, query, queryObject}) => {
 	let _type, _query;
 
 	const submit = (e) => {
+		console.log(queryObject)
 		e.preventDefault();
 		queryObject({
 			type: _type.value,
@@ -13,7 +14,7 @@ export const DashBoard = ({type, query, queryObject}) => {
 	}
 	
 	return(
-		<nav className="book-form">
+		<nav aria-label="Book search form" id="book-form">
 		<h1>React Book Finder</h1>
 		<form onSubmit={submit}>
 			<select aria-label="Drop-down list for book search category"

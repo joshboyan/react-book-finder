@@ -16,8 +16,8 @@ export class App extends Component {
 					"authors": "John Ronald Reuel Tolkien",
 					"rating": 4,
 					"publisher": "Del Rey Books",
-	    		"publishedDate": "1982",
-	    		"description": "Chronicles the adventures of the inhabitants of Middle-earth and Bilbo Baggins, the hobbit who brought home to The Shire the One Ring of Power",
+	    			"publishedDate": "1982",
+	    			"description": "Chronicles the adventures of the inhabitants of Middle-earth and Bilbo Baggins, the hobbit who brought home to The Shire the One Ring of Power",
 					"thumbnail": "http://books.google.com/books/content?id=hFfhrCWiLSMC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
 					"price": 9.99,
 					"purchase": "http://books.google.com"		
@@ -48,6 +48,7 @@ export class App extends Component {
 		this.updateQuery = this.updateQuery.bind(this);
 		this.updateHighlight = this.updateHighlight.bind(this);
 		this.addFavorite = this.addFavorite.bind(this);
+		this.updateVisibility = this.updateVisibility.bind(this);
 	}	
 
 	fetchQuery() {
@@ -179,20 +180,34 @@ export class App extends Component {
 		console.log('We made it all the way to the app!');
 	}
 
+	updateVisibility(visibility) {
+		this.setState({
+			visibility: {
+				highlight: visibility.highlight,
+				booklist: visibility.booklist,
+				favorites: visibility.favorites
+			}
+		});
+	}
+
  	render() {
 		return(
 			<div className="app">
 				<DashBoard queryObject={this.updateQuery} />
+
 				<Highlight data={this.state.items[this.state.highlight]}
-									 visibility={this.state.visibility.highlight}
-									 addFavorite={this.addFavorite}/>
+						   visibility={this.state.visibility.highlight}
+						   addFavorite={this.addFavorite}/>
+
 				<BookList data={this.state.items}
-									highlight={this.updateHighlight}
-									visibility={this.state.visibility.booklist} />
+						  highlight={this.updateHighlight}
+						  visibility={this.state.visibility.booklist} />
+				
 				<Favorites data={this.state.favorites}
-									 highlight={this.updateFavoriteHighlight}
-									 visibility={this.state.visibility.favorites} />
-				<Menu />
+						   highlight={this.updateFavoriteHighlight}
+						   visibility={this.state.visibility.favorites} />
+				
+				<Menu visibility={this.updateVisibility}/>
 			</div>
 		)
 	}
