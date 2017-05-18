@@ -8,9 +8,6 @@ export const Highlight = ({data, visibility, addFavorite, removeFavorite, highli
 
 	const color = {background: 'white', border: 'white', color: 'red'};
 	
-	const { title, authors, rating, ratingsCount, thumbnail, 
-		publisher, publishedDate, description, price, purchase } = data;
-	
 	const renderStars = (rating) => {
 		let stars = [];
 		let i, j;
@@ -42,20 +39,20 @@ export const Highlight = ({data, visibility, addFavorite, removeFavorite, highli
 		return (
 			<section id="book-highlight" 
 							 aria-label="Area showing information about book selected from list">
-				<h2>{title}</h2>
-				<h3>{(authors) ? <span>by</span> : null}{authors}</h3>
-				<span>{renderStars(data.rating)} {ratingsCount ? <span>({ratingsCount})</span> : null}</span>
-				<p><img src={thumbnail} alt={title}/>{description}</p>
+				<h2>{data.title}</h2>
+				<h3>{(data.authors) ? <span>by</span> : null}{data.authors}</h3>
+				<span>{renderStars(data.rating)} {data.ratingsCount ? <span>({data.ratingsCount})</span> : null}</span>
+				<p><img src={data.thumbnail} alt={data.title}/>{data.description}</p>
 				<div>
-					<span>{publisher}</span>
-					<span>{publishedDate}</span>
+					<span>{data.publisher}</span>
+					<span>{data.publishedDate}</span>
 				</div>
 				<hr/>
 				<div>
 					{!visibility.favorites ? 
 						<button onClick={() => addToFavorites()}><MdStar /> Favorite</button> : 
 						<button style={color} onClick={() => removeFromFavorites()}><MdHighlightRemove /> Remove</button>}
-					{(price) ? <a href={purchase}> Buy ${price}</a> : null}
+					{(data.price) ? <a href={data.purchase}> Buy ${data.price}</a> : null}
 				</div>
 			</section>
 		)
