@@ -16,17 +16,21 @@ export const BookRow = ({rowNumber, title, author, rating, highlight}) => {
 
 	const renderStars = (rating) => {
 		let stars = [];
-		let i, j;
+		// Use i to iterate through state array and j to assign unique key to each item
+		let i, j = 0;
 		if(rating) {
 			for (i = 0; i < 5; i++) {
-				stars.push(<MdStarOutline key={i} />);
+				stars.push(<MdStarOutline key={j} />);
+				j++;
 			}
 		}
 		for (i = 0; i < Math.floor(rating); i++) {
-			stars.splice(i, 1, <MdStar key={i} />);
+			stars.splice(i, 1, <MdStar key={j} />);
+			j++;
 		}
 		if (i < rating) {
-			stars.splice(i, 1, <MdStarHalf key={i + 1} />);
+			stars.splice(i, 1, <MdStarHalf key={j + 1} />);
+			j++;
 		}	
 			return stars;
 	}
