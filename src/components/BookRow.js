@@ -7,7 +7,6 @@ import Scroll from 'react-scroll';
 export const BookRow = ({rowNumber, title, author, rating, highlight}) => {
 
 	const click = () => {
-		console.log('Just clicked row number', rowNumber);
 		highlight({
 			highlight: rowNumber
 		})

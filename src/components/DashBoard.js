@@ -5,7 +5,6 @@ export const DashBoard = ({type, query, queryObject}) => {
 	let _type, _query;
 
 	const submit = (e) => {
-		console.log(queryObject)
 		e.preventDefault();
 		queryObject({
 			type: _type.value,

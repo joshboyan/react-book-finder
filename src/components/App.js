@@ -4,6 +4,7 @@ import { Highlight } from './Highlight';
 import { BookList } from './BookList';
 import { Favorites } from './Favorites';
 import { Menu } from './Menu';
+import idb from '../../node_modules/idb';
 
 export class App extends Component {
 
@@ -57,7 +58,6 @@ export class App extends Component {
 		this.serverRequest = fetch('https://www.googleapis.com/books/v1/volumes?' + this.state.queryObject.type + this.state.queryObject.query)
 			.then(response => response.json())
 			.then((data) => {
-				console.log(data);
 				data.items.forEach((item, i) => {
 					let element = {};
 					if (typeof item.volumeInfo.title != 'undefined') { 
@@ -117,14 +117,20 @@ export class App extends Component {
 						element.description = null;
 					}	
 					this.setState(this.state.items.splice(i, 1, element));
-				})
-				console.log(document.getElementsByClassName('book-form'));				
+				})				
 		}).catch((err) => {
 				console.error('There was an error fetching data', err);
 			});
 	}
 
 	componentDidMount() {
+		// Open an indexedDB database called favorites
+	    idb.open('favorites', 1, upgradeDB => {
+	        // Create an object store named favorites if none exists
+	        let favorites = upgradeDB.createObjectStore('favorites');
+	    }).catch(error => {
+	        console.error('IndexedDB:', error);
+	    });
 		this.fetchQuery();
 	}
 
@@ -179,11 +185,19 @@ export class App extends Component {
 			},
 			favorites: [ ...this.state.favorites, data]
 		});
-		console.log('We made it all the way to the app!');
+		 idb.open('favorites', 1)
+		 .then(db => {
+            let tx = db.transaction('favorites', 'readwrite');
+            let favorites = tx.objectStore('favorites', 'readwrite');
+            favorites.delete('favorites');
+            favorites.add(data, 'favorites');
+            console.log("is it there?")
+        }).catch(error => {
+            console.error('IndexedDB:', error);
+        });
 	}
 
 	removeFavorite() {
-		console.log("msg")
 		const remove = this.state.favorites;
 		remove.splice(this.state.highlight, 1);
 		this.setState({

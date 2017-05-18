@@ -26,12 +26,10 @@ export const Highlight = ({data, visibility, addFavorite, removeFavorite, highli
 	};
 
 	const addToFavorites = () => {
-		console.log('Added to favorites', data);
 		addFavorite(data);
 	};
 
 	const removeFromFavorites = (shit) => {
-		console.log("click event");
 		removeFavorite()
 	};
 
