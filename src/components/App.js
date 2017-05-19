@@ -185,12 +185,11 @@ export class App extends Component {
 			},
 			favorites: [ ...this.state.favorites, data]
 		});
-		 idb.open('favorites', 1)
+		 idb.open('favorites')
 		 .then(db => {
             let tx = db.transaction('favorites', 'readwrite');
             let favorites = tx.objectStore('favorites', 'readwrite');
-            favorites.delete('favorites');
-            favorites.add(data, 'favorites');
+            favorites.add(data, new Date());
             console.log("is it there?")
         }).catch(error => {
             console.error('IndexedDB:', error);
@@ -230,7 +229,6 @@ export class App extends Component {
 					this.state.items[this.state.highlight]}
 						   visibility={this.state.visibility}
 						   addFavorite={this.addFavorite}
-						   highlight={this.state.highlight}
 						   removeFavorite={this.removeFavorite}/>
 
 				<BookList data={this.state.items}
