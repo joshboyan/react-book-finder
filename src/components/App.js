@@ -124,6 +124,7 @@ export class App extends Component {
 	}
 
 	componentDidMount() {
+		
 		const dbPromise = idb.open('favorites', 1, upgradeDB => {
         // Create an object store named weather if none exists
 	        let favorites = upgradeDB.createObjectStore('favorites');
@@ -143,7 +144,9 @@ export class App extends Component {
 			}
 			});
 		});
-		this.fetchQuery();
+		if (!navigator.onLine) {
+		  setTimeout(function() {alert('You appear to be offline. Your favorites are still avaiable to you'); }, 1);
+		}
 	}
 
 	componentWillUnmount() {
