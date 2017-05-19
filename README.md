@@ -15,3 +15,5 @@ The project uses Google analytics for event tracking, uses schema markup to expo
 [User story #2: I can purchase the book or save it to a list for later.](https://github.com/joshboyan/react-book-finder/projects/2)
 
 [User story #3: I can use the app with low connectivity.](https://github.com/joshboyan/react-book-finder/projects/3)
+
+[Finishing touches](https://github.com/joshboyan/react-book-finder/projects/4)
