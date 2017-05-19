@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 
+
 export const DashBoard = ({type, query, queryObject}) => {
 	
 	let _type, _query;
@@ -14,7 +15,10 @@ export const DashBoard = ({type, query, queryObject}) => {
 	
 	return(
 		<nav aria-label="Book search form" id="book-form">
-		<h1>React Book Finder</h1>
+		<header>
+			<img src="assets/img/icon-128x128.png" alt="logo"/>
+			<h1>React Book Finder</h1>
+		</header>
 		<form onSubmit={submit}>
 			<select aria-label="Drop-down list for book search category"
 						  defaultValue={type} 

@@ -30,7 +30,7 @@ export const Highlight = ({ data, visibility, addFavorite, removeFavorite }) => 
 	};
 
 	const removeFromFavorites = (shit) => {
-		removeFavorite()
+		removeFavorite(data);
 	};
 
 	if (visibility.highlight) {

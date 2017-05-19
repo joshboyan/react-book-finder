@@ -23,6 +23,12 @@ body {
 	margin: 0;
 	background-color: $divider-color;
 	main {
+		header {
+			img {
+				float: left;
+				padding: 0 5% 1rem 10%;
+			}
+		}
 		#book-form,
 		#book-highlight,
 		#book-list div,
@@ -41,7 +47,9 @@ body {
 
 			h1 {
 				font: 2rem/1 $font1;
-				text-align: center;
+			}
+			form {
+				clear: both;
 			}
 			select,
 			input[type="submit"] {
@@ -202,8 +210,13 @@ Medium Styles
 
 		}
 		main {
-			nav {
-
+			#book-form {
+				h1 {
+					padding-top: 1rem;
+				}
+			}
+			#app-nav span {
+				padding: 0 12.5%;
 			}
 			#book-highlight {
 
@@ -227,12 +240,19 @@ Large Styles
 		font-size: 24px;
 	}
 	body {
-		max-width: 80%;
-		margin-left: 10%;
+		
 		header {
 
 		}
 		main {
+			#book-form,
+			#book-highlight,
+			#book-list div,
+			#favorites div {
+				max-width: 80%;
+				margin-left: 10%;
+			}
+	
 			nav {
 
 			}
