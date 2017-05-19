@@ -19,9 +19,9 @@ export class App extends Component {
 					"publisher": "Del Rey Books",
 	    			"publishedDate": "1982",
 	    			"description": "Chronicles the adventures of the inhabitants of Middle-earth and Bilbo Baggins, the hobbit who brought home to The Shire the One Ring of Power",
-					"thumbnail": "http://books.google.com/books/content?id=hFfhrCWiLSMC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+					"thumbnail": "https://books.google.com/books/content?id=hFfhrCWiLSMC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
 					"price": 9.99,
-					"purchase": "http://books.google.com"		
+					"purchase": "https://books.google.com"		
 				}
 			],
 			queryObject: {
@@ -35,15 +35,7 @@ export class App extends Component {
 				favorites: false
 			},
 			favorites: [
-				{
-					"title": "My Favorite",
-					"authors": "John Ronald Reuel Tolkien",
-					"rating": 4,
-					"publisher": "Del Rey Books",
-	    			"publishedDate": "1982",
-	    			"description": "Chronicles the adventures of the inhabitants of Middle-earth and Bilbo Baggins, the hobbit who brought home to The Shire the One Ring of Power",
-					"thumbnail": "http://books.google.com/books/content?id=hFfhrCWiLSMC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"			
-				}
+				null
 			]
 		}
 		this.updateQuery = this.updateQuery.bind(this);
