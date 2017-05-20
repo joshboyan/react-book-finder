@@ -5,11 +5,6 @@ import { App } from './components/App'
 
 window.React = React;
 
-render(
-	<App />,
-	document.getElementById('reactTarget')
-)
-
 // Check for browser support of service worker
 if ('serviceWorker' in navigator) {
  navigator.serviceWorker.register('/service-worker.js')
@@ -21,3 +16,10 @@ if ('serviceWorker' in navigator) {
    console.log('Whoops. Service worker registration failed, error:', err);
  });
 }
+
+render(
+	<App />,
+	document.getElementById('reactTarget')
+)
+
+
