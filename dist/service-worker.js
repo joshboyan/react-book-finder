@@ -37,7 +37,7 @@ self.addEventListener('fetch', function(event) {
   );
 });
 
-window.addEventListener('beforeinstallprompt', function(e) {
+self.addEventListener('beforeinstallprompt', function(e) {
  e.userChoice.then(function(choiceResult) {
 
     console.log(choiceResult.outcome);
