@@ -160,7 +160,7 @@ export class App extends Component {
 		}, () => {
 			this.fetchQuery();
 		});
-		ga('send', 'event', 'button', 'click', 'New query');
+		ga('send', 'event', 'Dashboard', 'New query');
 	}
 
 	updateHighlight(highlight) {
@@ -172,7 +172,7 @@ export class App extends Component {
 				favorites: false
 			}
 		});
-		ga('send', 'event', 'Book List', 'click', 'Check query highlight');
+		ga('send', 'event', 'Book List', 'View query highlight');
 	}
 
 	updateFavoriteHighlight(highlight) {
@@ -184,7 +184,7 @@ export class App extends Component {
 				favorites: true
 			}
 		});
-		ga('send', 'event', 'Favorites List', 'click', 'Check favorite highlight');
+		ga('send', 'event', 'Favorites List', 'View favorite highlight');
 
 	}
 
@@ -211,7 +211,7 @@ export class App extends Component {
         }).catch(error => {
             console.error('IndexedDB:', error);
         });
-		ga('send', 'event', 'Book List', 'click', 'Add to favorites');
+		ga('send', 'event', 'Book List', 'Add to favorites');
 
 	}
 
@@ -239,7 +239,7 @@ export class App extends Component {
         }).catch(error => {
             console.error('IndexedDB:', error);
         });
-		ga('send', 'event', 'Highlight', 'click', 'Remove favorite');
+		ga('send', 'event', 'Highlight', 'Remove favorite');
 
 	}
 

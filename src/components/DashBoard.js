@@ -11,8 +11,12 @@ export const DashBoard = ({type, query, queryObject}) => {
 			type: _type.value,
 			query: _query.value
 		});
-	}
-	
+	};
+
+	const categoryChange = () => {
+		ga('send', 'event', 'Dashboard', 'Change category');
+	};	
+
 	return(
 		<nav aria-label="Book search form" id="book-form">
 		<header>
@@ -23,9 +27,9 @@ export const DashBoard = ({type, query, queryObject}) => {
 			<select aria-label="Drop-down list for book search category"
 						  defaultValue={type} 
 						  ref={option => _type = option}>
-				<option value="q=intitle:">Title</option>
-				<option value="q=inauthor:">Author</option>
-				<option value="q=subject:">Subject</option>
+				<option onClick={() => categoryChange()} value="q=intitle:">Title</option>
+				<option onClick={() => categoryChange()} value="q=inauthor:">Author</option>
+				<option onClick={() => categoryChange()} value="q=subject:">Subject</option>
 			</select>
 			<input aria-label="Book search box" 
 			       type="text" 
@@ -43,4 +47,4 @@ export const DashBoard = ({type, query, queryObject}) => {
 DashBoard.propTypes = {
 	type: PropTypes.string,
 	query: PropTypes.string
-}
+};
