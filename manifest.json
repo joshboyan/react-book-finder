@@ -24,7 +24,7 @@
     "sizes": "512x512"
   }
   ],
-  "start_url": "https://joshboyan.github.io/react-book-finder/?utm_source=homescreen",
+  "start_url": "https://joshboyan.github.io/react-book-finder/index.html?launcher=true",
   "background_color": "#BDBDBD",
   "theme_color": "#03A9F4",
   "display": "fullscreen"
