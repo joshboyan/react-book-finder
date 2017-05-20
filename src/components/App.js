@@ -89,7 +89,8 @@ export class App extends Component {
 					}	
 					if ( typeof item.volumeInfo.imageLinks != 'undefined' &&
 								typeof item.volumeInfo.imageLinks.thumbnail != 'undefined' ) {
-						element.thumbnail = item.volumeInfo.imageLinks.thumbnail;
+						element.thumbnail = item.volumeInfo.imageLinks.thumbnail.replace(/http:/i, 'https:');
+
 					} else {
 						element.thumbnail = null;
 					}	
