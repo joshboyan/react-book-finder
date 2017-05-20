@@ -36,3 +36,19 @@ self.addEventListener('fetch', function(event) {
     })
   );
 });
+
+window.addEventListener('beforeinstallprompt', function(e) {
+ e.userChoice.then(function(choiceResult) {
+
+    console.log(choiceResult.outcome);
+
+    if(choiceResult.outcome == 'dismissed') {
+      console.log('User cancelled home screen install');
+      ga('send', 'event', 'Install Banner', 'User Declined');
+    }
+    else {
+      console.log('User added to home screen');
+      ga('send', 'event', 'Install Banner', 'User Installed on homescreen');
+    }
+  });
+});
