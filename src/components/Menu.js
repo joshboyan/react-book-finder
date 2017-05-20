@@ -14,6 +14,7 @@ export const Menu = ({setVisibility, visibility}) => {
 				favorites: true
 			
 		});
+		ga('send', 'event', 'Menu', 'click', 'Navigate to favortites');
 	}
 
 	const showHome = () => {
@@ -22,6 +23,8 @@ export const Menu = ({setVisibility, visibility}) => {
 			booklist: true,
 			favorites: false
 		});
+
+		ga('send', 'event', 'Menu', 'click', 'Navigate Home');
 	}
 
 	return (
