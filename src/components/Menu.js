@@ -1,6 +1,6 @@
 import FaHome from 'react-icons/lib/fa/home';
 import MdStar from 'react-icons/lib/md/star';
-import GoInfo from 'react-icons/lib/go/info';
+import GoMarkGithub from 'react-icons/lib/go/mark-github';
 
 export const Menu = ({setVisibility, visibility}) => {
 	
@@ -35,7 +35,7 @@ export const Menu = ({setVisibility, visibility}) => {
 			<span>{visibility.favorites ?
 				<FaHome onClick={() => showHome()}/> :
 			    <FaHome style={color} /> }</span>
-			<span><GoInfo /></span>
+			<span><a href="https://github.com/joshboyan/react-book-finder"><GoMarkGithub /></a></span>
 		</nav>
 	)
 }

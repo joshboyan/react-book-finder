@@ -171,6 +171,9 @@ body {
 			span {
 				padding: 0 10%;
 			}
+			a {
+				color: $primary-color-text;
+			}
 		}
 	}
 	@keyframes rowAnimation {
