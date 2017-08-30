@@ -1,0 +1,277 @@
+@import 'normalize/variables';
+@import 'normalize/vertical-rhythm';
+@import 'normalize/normalize-mixin';
+@import 'variables.scss';
+
+/******
+
+ Styles
+
+******/
+
+@mixin buttons {
+  border: 1px solid $primary-color-dark;
+  background: linear-gradient(to bottom, $primary-color, $primary-color-dark);
+  font: bold 1rem/1 $font2;
+  color: $primary-color-text;
+  text-shadow: 1px 1px 1px $primary-text-color;
+}
+html {
+	font-size: 16px;
+}
+body {
+	margin: 0;
+	background-color: $divider-color;
+	main {
+		header {
+			img {
+				float: left;
+				padding: 0 5% 1rem 10%;
+			}
+		}
+		#book-form,
+		#book-highlight,
+		#book-list div,
+		#favorites div {
+			margin: .5rem;
+			background-color: $primary-color-text;
+			border-bottom: .3rem solid $primary-color;
+			box-shadow: .3rem .3rem .3rem $secondary-text-color;
+		}	
+		#favorites div {
+			border-bottom: .3rem solid $accent-color;
+		}
+		#book-form {
+			margin-bottom: 1rem;
+			padding: .5rem 0 1.25rem 2%;
+
+			h1 {
+				font: 2rem/1 $font1;
+			}
+			form {
+				clear: both;
+			}
+			select,
+			input[type="submit"] {
+				@include buttons;
+				width: 22.5%;
+			}
+			select {	
+			  height: 49px;    
+		    padding-left: 1%;
+		    box-shadow: none;
+		    border-radius: 15px 0 0 15px;		    
+			}
+			option {
+				background: transparent;
+				color: $primary-text-color;
+			}
+			input[type="text"] {
+				width: 50%;
+				height: 45px;
+				padding-left: .5rem;
+				border: 1px solid $primary-color;
+				font: 1rem/1 $font2;
+				&:focus {
+					outline: $primary-color;
+				}
+			}
+			input[type="submit"] {
+				height: 50px;
+				border-radius: 0 15px 15px 0;
+			}
+		}
+		#book-highlight {
+			animation: rowAnimation .5s ease 0s forwards;
+			margin-bottom: 1rem;
+			h2 {
+				padding-top: 1rem;
+				padding-left: 1rem;
+				font: 2rem/1 $font1;
+			}
+			h3 {
+				padding-left: .25rem;
+				font: 1.5rem/1 $font1;
+				span {
+					font: 1.25rem/1 $font1;
+					color: $primary-text-color;
+				}
+			}
+			span {
+				padding: .75rem;
+				font-size: 2rem;
+				color: $accent-color;
+				span {
+					color: $secondary-text-color;
+				}
+			}
+			p {
+				padding: .75rem;
+				font: 1rem/1.5 $font2;
+				img {
+					float: left;
+					padding: 0 .75rem .75rem 0;
+				}
+			}
+			div {
+				clear: both;
+
+			  span {
+					padding: .6rem;
+					font: italic 1rem/1 $font1;
+					color: $primary-text-color;
+					&:nth-of-type(2) {
+						float: right;
+						margin-top: -.6rem;
+					}
+				}
+			}
+			hr {
+				width: 90%;
+			}
+			div:nth-of-type(2) {
+				min-height: 50px;
+				padding-top: 20px;
+			}
+			button,
+			a {
+				@include buttons;				
+				margin: 1rem 0 1em 12.5%;
+				border-radius: 15px;
+				text-decoration: none;
+				padding: 1rem;
+			}
+		}
+		#book-list,
+		#favorites {
+			margin-bottom: 175px;
+			div {
+			  
+				min-height: 60px;
+				overflow: auto;
+				padding: .6rem;
+				animation: rowAnimation .5s ease 0s forwards;
+				p {
+					font: italic bold 1em/1 $font2;
+				}
+				span:nth-of-type(2) {
+					float: right;
+				}
+			}
+		}
+		#app-nav {
+			position: fixed;
+			bottom: 0;
+			width: 100%;
+			width: 100vw;
+			padding-bottom: .5rem;
+			background: $primary-text-color;
+			font-size: 3rem;
+			color: $primary-color-text;
+			span {
+				padding: 0 9%;
+			}
+			a {
+				color: $primary-color-text;
+			}
+		}
+	}
+	@keyframes rowAnimation {
+				0% {
+					opacity: 0;
+					transform: scale(.25);
+				}
+				50% {
+					opacity: 1;
+				}
+				75% {
+					transform: scale(1.1)
+				}
+				100% {
+					transform: scale(1);
+				}
+			}			
+	footer {
+		span {
+			float: right;
+		}
+	}
+}
+
+/******
+
+Medium Styles
+
+******/
+
+@media only screen and (min-width: 400px){
+	body main #app-nav span {
+		padding: 0 10%;
+	}
+}
+
+@media only screen and (min-width:650px) {
+	html {
+	}
+	body {
+		header {
+
+		}
+		main {
+			#book-form {
+				h1 {
+					padding-top: 1rem;
+				}
+			}
+			#app-nav span {
+				padding: 0 12.5%;
+			}
+			#book-highlight {
+
+			}
+			table {
+
+			}
+		}
+		footer {
+
+		}
+	}
+}
+/******
+
+Large Styles
+
+******/
+@media only screen and (min-width:900px) {
+	html {
+	}
+	body {
+		
+		header {
+
+		}
+		main {
+			#book-form,
+			#book-highlight,
+			#book-list div,
+			#favorites div {
+				max-width: 80%;
+				margin-left: 10%;
+			}
+	
+			nav {
+
+			}
+			#book-highlight {
+
+			}
+			table {
+
+			}
+		}
+		footer {
+
+		}
+	}
+}
