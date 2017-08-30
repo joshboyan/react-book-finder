@@ -144,7 +144,7 @@ body {
 		}
 		#book-list,
 		#favorites {
-			margin-bottom: 75px;
+			margin-bottom: 175px;
 			div {
 			  
 				min-height: 60px;
@@ -169,7 +169,7 @@ body {
 			font-size: 3rem;
 			color: $primary-color-text;
 			span {
-				padding: 0 10%;
+				padding: 0 9%;
 			}
 			a {
 				color: $primary-color-text;
@@ -204,9 +204,14 @@ Medium Styles
 
 ******/
 
-@media only screen and (min-width:550px) {
+@media only screen and (min-width: 400px){
+	body main #app-nav span {
+		padding: 0 10%;
+	}
+}
+
+@media only screen and (min-width:650px) {
 	html {
-		font-size: 18px;
 	}
 	body {
 		header {
@@ -240,7 +245,6 @@ Large Styles
 ******/
 @media only screen and (min-width:900px) {
 	html {
-		font-size: 24px;
 	}
 	body {
 		
