@@ -9,8 +9,7 @@
   "scripts": {
     "test": "mocha",
     "start": "node server/index.js",
-    "start-dev": "nodemon server/",
-    "heroku-postbuild": "cd react-ui/ && npm install --only=dev && npm install && npm start"
+    "start-dev": "nodemon server/index.js"
   },
   "repository": {
     "type": "git",
