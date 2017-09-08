@@ -1,42 +1,29 @@
 {
   "name": "react-book-finder",
   "version": "1.0.0",
-  "description": "React intterface using Google books API",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "test",
-    "start": "./node_modules/.bin/webpack-dev-server"
+    "test": "mocha",
+    "start": "node server/",
+    "start-dev": "nodemon server/"
   },
-  "keywords": [
-    "React",
-    "API"
-  ],
-  "author": "Josh Boyan",
-  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshboyan/react-book-finder.git"
+  },
+  "author": "joshboyan.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joshboyan/react-book-finder/issues"
+  },
+  "homepage": "https://github.com/joshboyan/react-book-finder#readme",
   "devDependencies": {
-    "autoprefixer-loader": "^3.2.0",
-    "babel-cli": "^6.18.0",
-    "babel-core": "^6.24.1",
-    "babel-loader": "^7.0.0",
-    "babel-preset-latest": "^6.24.1",
-    "babel-preset-react": "^6.16.0",
-    "babel-preset-stage-0": "^6.24.1",
-    "css-loader": "^0.28.1",
-    "json-loader": "^0.5.4",
-    "node-sass": "^4.5.2",
-    "sass-loader": "^6.0.3",
-    "style-loader": "^0.17.0",
-    "sw-precache-webpack-plugin": "^0.11.0",
-    "webpack": "^2.5.0",
-    "webpack-dev-server": "^2.4.5"
-  },
-  "dependencies": {
-    "idb": "^2.0.3",
-    "prop-types": "^15.5.10",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
-    "react-icons": "^2.2.5",
-    "react-router-dom": "^4.1.1",
-    "react-scroll": "^1.5.2"
+    "body-parser": "^1.17.2",
+    "chai": "^4.1.2",
+    "express": "^4.15.4",
+    "mocha": "^3.5.0",
+    "mongoose": "^4.11.10",
+    "nodemon": "^1.12.0"
   }
 }
