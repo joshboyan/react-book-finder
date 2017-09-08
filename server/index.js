@@ -84,11 +84,19 @@ router.route('/favorites')
           favorite: favorite
         });
       }
-    })
-
-    // Get all the favorites
-  })
-
+    })    
+  }) // End .post
+  
+  // Retrieve all favorites from the database
+    .get(function(req, res){
+      Favorite.find(function(err, favorites){
+        if(err){
+          res.send(err);
+        } else {
+          res.json(favorites);
+        }
+      });
+    }) // End .get
 
 
 app.listen(config.port,

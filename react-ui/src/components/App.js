@@ -13,17 +13,7 @@ export class App extends Component {
 		super(props)
 		this.state = {
 			items: [
-				{
-					"title": "The Hobbit, Or, There and Back Again",
-					"authors": "John Ronald Reuel Tolkien",
-					"rating": 4,
-					"publisher": "Del Rey Books",
-	    		"publishedDate": "1982",
-	    		"description": "Chronicles the adventures of the inhabitants of Middle-earth and Bilbo Baggins, the hobbit who brought home to The Shire the One Ring of Power",
-					"thumbnail": "https://books.google.com/books/content?id=hFfhrCWiLSMC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-					"price": 9.99,
-					"purchase": "https://books.google.com"		
-				}
+				null
 			],
 			queryObject: {
 				type: 'q=intitle:',
@@ -117,30 +107,43 @@ export class App extends Component {
 			});
 	}
 
-	componentDidMount() {
-		
-		const dbPromise = idb.open('favorites', 1, upgradeDB => {
-        // Create an object store named weather if none exists
-	        let favorites = upgradeDB.createObjectStore('favorites');
-	    }).catch(error => {
-	        console.error('IndexedDB:', error);
-	    });
-	    dbPromise.then(db => {
-		  return db.transaction('favorites')
-		    .objectStore('favorites').getAll();
-		}).then(allObjs => {
+	componentDidMount() {		
+		// Populate the favorites list
+		axios.get('/api/favorites')
+		.then(response =>{
+			console.log('Fetched from mongo', response.data);
 			this.setState({
-				favorites: allObjs,
-				visibility: {
-				highlight: false,
-				booklist: false,
-				favorites: true
-			}
-			});
+				favorites: response.data
+			})
+		}).catch(err => {
+			console.error(err);
 		});
-		if (!navigator.onLine) {
-		  setTimeout(function() {alert('You appear to be offline. Your favorites are still avaiable to you'); }, 1);
-		}
+
+		// Offline
+		if(!window.navigator.onLine) {
+			setTimeout(function() {alert('You appear to be offline. Your favorites are still avaiable to you'); }, 1);
+			// Open IDB
+			const dbPromise = idb.open('favorites', 1, upgradeDB => {
+			// Create an object store named weather if none exists
+				let favorites = upgradeDB.createObjectStore('favorites');
+			}).catch(error => {
+					console.error('IndexedDB:', error);
+			});
+			//Get all the favorites
+			dbPromise.then(db => {
+			return db.transaction('favorites')
+				.objectStore('favorites').getAll();
+			}).then(allObjs => {
+				this.setState({
+					favorites: allObjs,
+					visibility: {
+					highlight: false,
+					booklist: false,
+					favorites: true
+					}
+				});
+			});
+		}		
 	}
 
 	componentWillUnmount() {

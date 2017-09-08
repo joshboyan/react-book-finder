@@ -3,7 +3,7 @@ import { BookRow } from './BookRow';
 
 export const BookList = ({data, highlight, visibility}) => {
 
-	if (visibility) {
+	if (visibility && data[0] !== null) {
 		return(
 			<section id="book-list"
 							 aria-label="List of books returned from search">
