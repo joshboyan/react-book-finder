@@ -233,6 +233,7 @@ export class App extends Component {
 	}
 
 	removeFavorite(data) {
+		// Remove from state
 		const remove = this.state.favorites;
 		remove.splice(this.state.highlight, 1);
 		this.setState({
@@ -243,21 +244,36 @@ export class App extends Component {
 			},
 			favorites: [...remove]
 		});
+
+		// Open IDB
 		const dbPromise = idb.open('favorites', 1, upgradeDB => {
-        // Create an object store named weather if none exists
-	        let favorites = upgradeDB.createObjectStore('favorites');
-	    }).catch(error => {
-	        console.error('IndexedDB:', error);
-	    });
+			// Create an object store named weather if none exists
+			let favorites = upgradeDB.createObjectStore('favorites');
+		}).catch(error => {
+				console.error('IndexedDB:', error);
+		});
+		//Remove from IDB
 		dbPromise.then(db => {
-            let tx = db.transaction('favorites', 'readwrite');
-            let favorites= tx.objectStore('favorites', 'readwrite');
-            favorites.delete(data.title);
-        }).catch(error => {
-            console.error('IndexedDB:', error);
-        });
+				let tx = db.transaction('favorites', 'readwrite');
+				let favorites= tx.objectStore('favorites', 'readwrite');
+				favorites.delete(data.title);
+		}).catch(error => {
+				console.error('IndexedDB:', error);
+		});
 		ga('send', 'event', 'Highlight', 'Remove favorite');
 
+		// Remove from mongoDB
+		console.log(data);
+		// Add favorite to mongoDB
+		fetch('/api/favorites', {
+				method: 'DELETE',
+        body: data})
+		.then(function (res) {
+			console.log(res);
+		})
+		.catch(function (err) {
+			console.log(err);
+		});
 	}
 
 	updateVisibility(setVisibility) {

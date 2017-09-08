@@ -1,5 +1,6 @@
 var config = require('./config');
 var express = require('express');
+var util = require('util');
 var app = express();
 var bodyParser = require('body-parser');
 var path = require('path');
@@ -88,15 +89,28 @@ router.route('/favorites')
   }) // End .post
   
   // Retrieve all favorites from the database
-    .get(function(req, res){
-      Favorite.find(function(err, favorites){
-        if(err){
-          res.send(err);
-        } else {
-          res.json(favorites);
-        }
-      });
-    }) // End .get
+  .get(function(req, res){
+    Favorite.find(function(err, favorites){
+      if(err){
+        res.send(err);
+      } else {
+        res.json(favorites);
+      }
+    });
+  }) // End .get
+
+  // Remove a favorite from the list
+  .delete(function(req, res){
+    console.log(req.body._id);
+    console.log(util.inspect(req.body, {depth: null}));
+    Favorite.remove({ _id: req.body._id }, function(err){
+      if(err) {
+        res.send(err);
+      } else {
+        res.send(req.body);
+      }
+    })
+  })
 
 
 app.listen(config.port,
