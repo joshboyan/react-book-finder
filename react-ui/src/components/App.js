@@ -255,9 +255,14 @@ export class App extends Component {
             favorites.delete(data.title);
         }).catch(error => {
             console.error('IndexedDB:', error);
-        });
+        })
 		ga('send', 'event', 'Highlight', 'Remove favorite');
-
+		axios.delete('/api/favorites', data)
+			.then(function(res){
+				console.log(res);
+			}).catch(function(err){
+				console.error(err);
+			})
 	}
 
 	updateVisibility(setVisibility) {

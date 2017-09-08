@@ -98,6 +98,15 @@ router.route('/favorites')
       });
     }) // End .get
 
+    .delete(function(req,res){
+        Favorite.remove({_id: req.body._id}, function(err){
+          if(err){
+            console.error(err);
+          } else {
+            console.log('wtf');
+          }
+        })
+    })
 
 app.listen(config.port,
   console.log('Listening on port ', config.port));
