@@ -5,6 +5,7 @@ import { BookList } from './BookList';
 import { Favorites } from './Favorites';
 import { Menu } from './Menu';
 import idb from '../../node_modules/idb';
+import axios from 'axios'
 
 export class App extends Component {
 
@@ -17,8 +18,8 @@ export class App extends Component {
 					"authors": "John Ronald Reuel Tolkien",
 					"rating": 4,
 					"publisher": "Del Rey Books",
-	    			"publishedDate": "1982",
-	    			"description": "Chronicles the adventures of the inhabitants of Middle-earth and Bilbo Baggins, the hobbit who brought home to The Shire the One Ring of Power",
+	    		"publishedDate": "1982",
+	    		"description": "Chronicles the adventures of the inhabitants of Middle-earth and Bilbo Baggins, the hobbit who brought home to The Shire the One Ring of Power",
 					"thumbnail": "https://books.google.com/books/content?id=hFfhrCWiLSMC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
 					"price": 9.99,
 					"purchase": "https://books.google.com"		
@@ -188,7 +189,8 @@ export class App extends Component {
 
 	}
 
-	addFavorite(data) {		
+	addFavorite(data) {	
+		// Add to state	
 		this.setState({
 			items: this.state.items.filter((item, i) => i !== this.state.highlight),
 			visibility: {
@@ -198,21 +200,33 @@ export class App extends Component {
 			},
 			favorites: [ ...this.state.favorites, data]
 		});
-		const dbPromise = idb.open('favorites', 1, upgradeDB => {
-        // Create an object store named weather if none exists
-	        let favorites = upgradeDB.createObjectStore('favorites');
-	    }).catch(error => {
-	        console.error('IndexedDB:', error);
-	    });
-		dbPromise.then(db => {
-            let tx = db.transaction('favorites', 'readwrite');
-            let favorites= tx.objectStore('favorites', 'readwrite');
-            favorites.add(data, data.title);
-        }).catch(error => {
-            console.error('IndexedDB:', error);
-        });
-		ga('send', 'event', 'Book List', 'Add to favorites');
 
+		// Open IDB
+		const dbPromise = idb.open('favorites', 1, upgradeDB => {
+			// Create an object store named weather if none exists
+				let favorites = upgradeDB.createObjectStore('favorites');
+		}).catch(error => {
+				console.error('IndexedDB:', error);
+		});
+
+		// Add favorite to IDB
+		dbPromise.then(db => {
+			let tx = db.transaction('favorites', 'readwrite');
+			let favorites= tx.objectStore('favorites', 'readwrite');
+			favorites.add(data, data.title);
+		}).catch(error => {
+				console.error('IndexedDB:', error);
+		});
+
+		// Add favorite to mongoDB
+		axios.post('/api/favorites', data)
+		.then(function (res) {
+		console.log(res);
+		})
+		.catch(function (err) {
+			console.log(err);
+		});  	
+		ga('send', 'event', 'Book List', 'Add to favorites');
 	}
 
 	removeFavorite(data) {

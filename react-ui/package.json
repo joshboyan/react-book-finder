@@ -38,5 +38,6 @@
     "react-icons": "^2.2.5",
     "react-router-dom": "^4.1.1",
     "react-scroll": "^1.5.2"
-  }
+  }, 
+  "proxy":"localhost:5000"
 }
