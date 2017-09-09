@@ -1,9 +1,18 @@
 var config = require('./config');
+var cors = require('cors-express');
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var path = require('path');
-
+var options = {
+      allow : {
+          origin: '*',
+          methods: 'GET,PATCH,PUT,POST,DELETE,HEAD,OPTIONS',
+          headers: 'Content-Type, Authorization, Content-Length, X-Requested-With, X-HTTP-Method-Override'
+      } 
+    }
+ 
+app.use(cors(options));
 // configure app to use bady parser to extract JSON from POST
 app.use(bodyParser.urlencoded({ extended : true }));
 app.use(bodyParser.json());
@@ -57,7 +66,8 @@ router.get('/api', function(req, res){
 
 //Register API routes
 app.use('/api', router);
-// All routes that end in /favorites
+
+// Route for all records in collection
 router.route('/favorites')
 
   // Add a favortie entry to the database
@@ -98,14 +108,20 @@ router.route('/favorites')
       });
     }) // End .get
 
-    .delete(function(req,res){
-        Favorite.remove({_id: req.body._id}, function(err){
+// Route for specific records
+router.route('/favorites/:id')
+
+    // Remove a record permanently
+    .delete(function(req, res) {
+        Favorite.remove({_id: req.params.id}, function(err){
           if(err){
             console.error(err);
           } else {
-            console.log('wtf');
+            var id = req.body._id;
+            console.log(id);
           }
         })
+        res.status(204).end();
     })
 
 app.listen(config.port,

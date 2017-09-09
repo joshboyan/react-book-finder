@@ -257,7 +257,7 @@ export class App extends Component {
             console.error('IndexedDB:', error);
         })
 		ga('send', 'event', 'Highlight', 'Remove favorite');
-		axios.delete('/api/favorites', data)
+		axios.delete(`/api/favorites/${data._id}`, data)
 			.then(function(res){
 				console.log(res);
 			}).catch(function(err){
