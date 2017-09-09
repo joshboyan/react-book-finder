@@ -1,3 +1,6 @@
+/**
+ * This component show each entries overview snippet
+ */
 import PropTypes from 'prop-types';
 import MdStarHalf from 'react-icons/lib/md/star-half';
 import MdStarOutline from 'react-icons/lib/md/star-outline';
@@ -6,6 +9,7 @@ import Scroll from 'react-scroll';
 
 export const BookRow = ({rowNumber, title, author, rating, highlight}) => {
 
+	// Scroll to the top of UI when user selects an entry
 	const click = () => {
 		highlight({
 			highlight: rowNumber
@@ -13,6 +17,7 @@ export const BookRow = ({rowNumber, title, author, rating, highlight}) => {
 		Scroll.animateScroll.scrollTo(200);
 	}
 
+	// This transforms the numerical rating into a 5 star UI
 	const renderStars = (rating) => {
 		let stars = [];
 		// Use i to iterate through state array and j to assign unique key to each item

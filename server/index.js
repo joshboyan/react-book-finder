@@ -115,10 +115,9 @@ router.route('/favorites/:id')
     .delete(function(req, res) {
         Favorite.remove({_id: req.params.id}, function(err){
           if(err){
-            console.error(err);
+            res.send(err);
           } else {
-            var id = req.body._id;
-            console.log(id);
+            res.send("Record Removed");
           }
         })
         res.status(204).end();

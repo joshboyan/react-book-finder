@@ -1,3 +1,7 @@
+/**
+ * This element is for the users to navigate between the 
+ * home/search list and the favorites list 
+ */
 import FaHome from 'react-icons/lib/fa/home';
 import MdStar from 'react-icons/lib/md/star';
 import GoMarkGithub from 'react-icons/lib/go/mark-github';

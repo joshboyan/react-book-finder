@@ -1,5 +1,7 @@
+/**
+ * This is the top dashboard used for entering search terms
+ */
 import PropTypes from 'prop-types';
-
 
 export const DashBoard = ({type, query, queryObject}) => {
 	

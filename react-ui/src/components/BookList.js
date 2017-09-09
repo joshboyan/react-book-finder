@@ -1,3 +1,6 @@
+/**
+ * This component generates a BookRow for every array element in state
+ */
 import PropTypes from 'prop-types';
 import { BookRow } from './BookRow';
 

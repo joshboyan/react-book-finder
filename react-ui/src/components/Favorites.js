@@ -1,3 +1,6 @@
+/**
+ * This component is used to render all the favorites in a list
+ */
 import PropTypes from 'prop-types';
 import { BookRow } from './BookRow';
 

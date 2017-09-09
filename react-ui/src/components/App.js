@@ -1,3 +1,7 @@
+/**
+ * This program allows users to search the google books
+ * API and save their favorites to mongoDB
+ */
 import { Component } from 'react';
 import { DashBoard } from './DashBoard';
 import { Highlight } from './Highlight';
@@ -37,6 +41,7 @@ export class App extends Component {
 		this.removeFavorite = this.removeFavorite.bind(this);
 	}	
 
+	// Get the results for the search terms entered
 	fetchQuery() {
 		this.serverRequest = fetch('https://www.googleapis.com/books/v1/volumes?' + this.state.queryObject.type + this.state.queryObject.query)
 			.then(response => response.json())
@@ -150,6 +155,7 @@ export class App extends Component {
 		this.serverRequest.abort();
 	}
 
+	// Set the current query in state on change
 	updateQuery(queryObject) {
 		this.setState({
 			queryObject: {
@@ -167,6 +173,7 @@ export class App extends Component {
 		ga('send', 'event', 'Dashboard', 'New query');
 	}
 
+	// Show all the data pertaining to an item
 	updateHighlight(highlight) {
 		this.setState({
 			highlight: highlight.highlight,
@@ -264,7 +271,8 @@ export class App extends Component {
 				console.error(err);
 			})
 	}
-
+  
+	// Set state for which parts of the UI are visible
 	updateVisibility(setVisibility) {
 		this.setState({
 			visibility: {

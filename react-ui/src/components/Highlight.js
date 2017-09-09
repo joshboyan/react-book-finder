@@ -1,3 +1,6 @@
+/**
+ * This comonent shows all the details about the selected entry 
+ */
 import PropTypes from 'prop-types';
 import MdStarHalf from 'react-icons/lib/md/star-half';
 import MdStarOutline from 'react-icons/lib/md/star-outline';
@@ -8,6 +11,7 @@ export const Highlight = ({ data, visibility, addFavorite, removeFavorite }) => 
 
 	const color = {background: 'white', border: 'white', color: 'red'};
 	
+	// Transform numerical rating into 5 star UI element
 	const renderStars = (rating) => {
 		let stars = [];
 		let i, j;
@@ -29,7 +33,7 @@ export const Highlight = ({ data, visibility, addFavorite, removeFavorite }) => 
 		addFavorite(data);
 	};
 
-	const removeFromFavorites = (shit) => {
+	const removeFromFavorites = () => {
 		removeFavorite(data);
 	};
 
